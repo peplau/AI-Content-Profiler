@@ -1,0 +1,43 @@
+﻿---
+ID: "94eaac3d-5233-4a32-83f2-f292940f525d"
+Parent: "0b72fbb9-2437-4c64-a7be-19b3dffa933c"
+Template: "419f8ffb-2713-4cec-86a7-7585a727fe25"
+Path: /sitecore/system/Workflows/Sample AI Profiler Workflow/Awaiting Approval/Approve and run AI Profiling/Validation Action
+SharedFields:
+- ID: "202f2a2c-6274-467f-a9c8-3ec4585a3060"
+  Hint: Critical Error
+  Value: You cannot approve an item with validation errors.
+- ID: "281ab75c-db54-4471-9675-c01fb380fb62"
+  Hint: Error
+  Value: You cannot approve an item with validation errors.
+- ID: "322164dc-27ac-404e-b7dc-b74c13cdba1e"
+  Hint: Type
+  Value: Sitecore.Workflows.Simple.ValidatorsAction, Sitecore.Kernel
+- ID: "95fd25aa-742d-41d2-8d04-6406bba8c60d"
+  Hint: Max Result
+  Value: Warning
+- ID: "a50d7933-f230-4434-9538-29c802f0ce23"
+  Hint: Fatal Error
+  Value: You cannot approve an item with validation errors.
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20071113T152154
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "d7822c81-a91a-4040-8ebd-8f8dce25d98f"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20240517T160525Z

@@ -1,0 +1,27 @@
+﻿---
+ID: "d0384e4e-e665-4de5-9811-92027617c4d7"
+Parent: "09e58042-818e-447c-8257-3cdefe81330c"
+Template: "11b02989-8613-4fe7-8e69-1d49eb6c5410"
+Path: "/sitecore/system/Modules/AI Profiler/Data/Models/gpt-4-turbo"
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 50
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20240517T125053Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "e94ca987-f0fd-406b-abe9-aefb0cdd93a0"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20240517T125117Z

@@ -1,0 +1,34 @@
+﻿---
+ID: "12ae0e0e-00cd-4164-9f06-f645e1a529e5"
+Parent: "6b082f69-fe6d-478a-9b38-9d28bc4be38e"
+Template: "6b082f69-fe6d-478a-9b38-9d28bc4be38e"
+Path: /sitecore/templates/Modules/AI Profiler/Module/Settings/OpenAI Settings/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20240517T124138Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "88a56412-1c1e-4c06-ac05-fa2be15a6b8e"
+      Hint: Model
+      Value: "gpt-4o"
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "0b4bdf2d-97de-476a-8cf2-ee980998e325"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20240517T191850Z

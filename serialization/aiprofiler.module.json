@@ -1,0 +1,30 @@
+{
+    "namespace": "AIProfiler",
+    "items": {
+        "includes": [
+			{
+				"name": "AIProfiler.System.ModuleFolder.Data",
+				"path": "/sitecore/system/Modules/AI Profiler/Data"
+			},
+			{
+				"name": "AIProfiler.System.ModuleFolder.Settings",
+				"path": "/sitecore/system/Modules/AI Profiler/Settings",
+				"scope": "ItemAndChildren"
+			},
+			{
+				"name": "AIProfiler.System.Scripts",
+				"path": "/sitecore/system/Modules/PowerShell/Script Library/AI Profiler"
+			},
+			{
+				"name": "AIProfiler.Templates.Module",
+				"path": "/sitecore/templates/Modules/AI Profiler/Module"
+			}
+		],
+        "excludedFields":[
+            {
+				"fieldID": "{FA498811-5E62-4462-B0D9-383804C0CE80}",
+				"description": "API Key"
+			}
+        ]		
+	}
+}

@@ -1,0 +1,45 @@
+﻿---
+ID: "072e4fc8-3cf7-4b5f-b3c0-75f62ce0df27"
+Parent: "00cfad8a-950b-43ef-8e83-2fc7dfbd57b3"
+Template: "26c54307-6d31-46cf-a96b-70678c4fef7d"
+Path: /sitecore/system/Workflows/Sample AI Profiler Workflow/Draft/__OnSave/Auto Submit Action
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: office/16x16/submit.png
+- ID: "67918816-9524-4666-87b3-c07aff9cebd3"
+  Hint: Role Name
+  Value: |
+    sitecore\Sitecore Minimal Page Editor
+- ID: "ada004e1-3b87-476a-b44e-0c66606d0f47"
+  Hint: Type
+  Value: Sitecore.Workflows.Simple.AutoSubmitAction,Sitecore.Kernel
+- ID: "fa367915-b5a1-4e32-b35f-d7c9ecd399eb"
+  Hint: Next state
+  Value: "{212BACAE-5F61-4D46-BDCF-11B57581C33C}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20080313T183332Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "45baa018-cfd1-43b9-a6e9-5fa8e90d754e"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20240517T185438Z

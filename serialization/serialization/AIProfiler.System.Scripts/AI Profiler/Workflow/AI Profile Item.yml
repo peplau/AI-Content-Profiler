@@ -1,0 +1,134 @@
+﻿---
+ID: "c7fab8bf-99bc-4971-b41a-3ab8cfa63ccd"
+Parent: "fdaa6edb-8c31-4094-b663-0dba5fd1ee78"
+Template: "dd22f1b3-bd87-4db2-9e7d-f7a496888d43"
+Path: /sitecore/system/Modules/PowerShell/Script Library/AI Profiler/Workflow/AI Profile Item
+SharedFields:
+- ID: "b1a94ff0-6897-47c0-9c51-aa6acb80b1f0"
+  Hint: Script
+  Value: |
+    $item = $SitecoreContextItem
+    
+    
+    
+    ### EXPORT THIS AS A SEPARATED GLOBALIZED FILE
+    Set-Variable -name "AIProfiler_OpenAISettings_TemplateID" -value "{6B082F69-FE6D-478A-9B38-9D28BC4BE38E}" -option Constant
+    Set-Variable -name "AIProfiler_Settings_Path" -value "/sitecore/system/Modules/AI Profiler/Settings" -option Constant
+    Set-Variable -name "AIProfiler_Trees_Path" -value "$($AIProfiler_Settings_Path)/Trees" -option Constant
+    function Get-OpenAISettings {
+        $settings = Get-Item -Path master: -Query "$($AIProfiler_Settings_Path)//*[@@templateid='$($AIProfiler_OpenAISettings_TemplateID)']"
+        return $settings;
+    }
+    function Get-OpenAIApiKey() {
+        param(
+            $SettingsItem
+        )
+        if ($SettingsItem -eq $null){
+            return $null
+        }
+        $apiKeyField = $SettingsItem.Fields["API Key"]
+        if ([string]::IsNullOrEmpty($apiKeyField) -eq $null){
+            return $null
+        }
+        return $apiKeyField.Value
+    }
+    function Get-ContextProfiles() {
+        param(
+            $contextItem
+        )
+        $treesRootItem = Get-Item -Path "master:$($AIProfiler_Trees_Path)"
+        if ($treesRootItem -eq $null){
+            return $null
+        }
+        
+        # Filter the first child that meets the criteria
+        $matchingChild = $treesRootItem.Children | Where-Object {
+            $rootField = $_.Fields["Root"]
+            if ($rootField -ne $null -and $rootField.TargetItem -ne $null) {
+                $rootItem = Get-Item -Path $rootField.TargetItem.ID
+                return ($rootItem -ne $null) -and ($contextItem.Paths.FullPath -like $rootItem.Paths.FullPath)
+            }
+            return $false
+        } | Select-Object -First 1    
+        
+        
+        
+        
+        $rootField = $treeRootItem.Fields["Root"]
+        if ($rootField -eq $null){
+            return $null
+        }
+        $rootField = [Sitecore.Data.Fields.ReferenceField]$treeRootItem.Field["Root"]
+        
+        
+        
+        
+        
+    }
+    ### EXPORT THIS AS A SEPARATED GLOBALIZED FILE
+    
+    
+    
+    ### 0 - Get & Escape conditions
+    # 0.1 - Items with no Layout
+    if ($item.Fields[[Sitecore.FieldIDs]::LayoutField] -eq $null -or [string]::IsNullOrEmpty($item.Fields[[Sitecore.FieldIDs]::LayoutField])){
+        Close-Window
+    }
+    
+    # 0.2 - Get OpenAISettings - No OpenAISettings item
+    $settingsItem = Get-OpenAISettings
+    if ($settingsItem -eq $null){
+        New-ItemWorkflowEvent -Item $item -Text "[AI Profiler] You must setup your OpenAISettings item"
+        Close-Window
+    }
+    
+    # 0.3 - Get APIKey - No APIKey is set
+    $apiKey = Get-OpenAIApiKey($settingsItem)
+    if ([string]::IsNullOrEmpty($apiKey) -eq $null){
+        New-ItemWorkflowEvent -Item $item -Text "[AI Profiler] You must setup your 'API Key' at the OpenAISettings item"
+        Close-Window
+    }
+    
+    ### 1 - Get Profile(s) to be used according to the item, if nothing is configured escape
+    $contextProfiles = Get-ContextProfiles($item)
+    if ($contextProfiles -eq $null){
+        Close-Window
+    }
+    
+    
+    ### 3 - Serialize the item, and the selected profile(s)
+    ### 4 - Ask ChatGPT for the actuals
+    ### 5 - Show detected profiles
+    ### 6 - Save Profile settings to Item and proceed to the next step
+    
+    
+    $comment = Show-Input -Prompt "Enter a comment: $($item.ID)"
+    
+    
+    Close-Window
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20240517T201631Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "51db4ce1-4431-4632-8c3d-b89d626d36cd"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20240518T025624Z

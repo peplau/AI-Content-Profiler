@@ -1,0 +1,48 @@
+﻿---
+ID: "a1fa34be-e7be-4696-80f8-9c25ec1dcf1f"
+Parent: "13eca607-8ecf-479e-9b95-74649afe6729"
+Template: "0fc09ea4-8d87-4b0e-a5c9-8076ae863d9c"
+Path: /sitecore/system/Marketing Control Panel/Profiles/Sitecore Public/Profile Cards/Sales Person
+SharedFields:
+- ID: "85970ab7-22ea-4206-be86-c0167178860b"
+  Hint: Profile Card Value
+  Value: |
+    <tracking>
+      <profile id="40f548fe-8426-4339-bb26-fd1f3510130c" name="Sitecore People">
+        <key name="Content Management" value="25" />
+        <key name="Marketing" value="15" />
+        <key name="Sales" value="100" />
+        <key name="Strategy" value="25" />
+        <key name="Technical" value="15" />
+      </profile>
+    </tracking>
+Languages:
+- Language: en
+  Fields:
+  - ID: "a26fc256-1db0-44aa-ba3d-1c830bf882a2"
+    Hint: Name
+    Value: Sales Person
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20240418T215800Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "df4e8f0b-7a26-4175-bb37-7e2aec528b40"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20240418T215847Z
