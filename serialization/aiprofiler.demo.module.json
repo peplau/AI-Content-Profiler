@@ -1,15 +1,15 @@
 {
-    "namespace": "AIProfiler.Demo",
-    "items": {
-        "includes": [
-			{
-				"name": "AIProfiler.Demo.System.Profile.SitecorePublic",
-				"path": "/sitecore/system/Marketing Control Panel/Profiles/Sitecore Public"
-			},
-			{
-				"name": "AIProfiler.Demo.System.Workflow",
-				"path": "/sitecore/system/Workflows/Sample AI Profiler Workflow",
-			}			
-		]
-	}
+  "namespace": "AIProfiler.Demo",
+  "items": {
+    "includes": [
+      {
+        "name": "AIProfiler.Demo.System.Profile.SitecorePublic",
+        "path": "/sitecore/system/Marketing Control Panel/Profiles/Sitecore Public"
+      },
+      {
+        "name": "AIProfiler.Demo.System.Workflow",
+        "path": "/sitecore/system/Workflows/Sample AI Profiler Workflow",
+      }
+    ]
+  }
 }

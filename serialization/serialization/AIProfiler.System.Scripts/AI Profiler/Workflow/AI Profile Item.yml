@@ -15,6 +15,10 @@ SharedFields:
     Set-Variable -name "AIProfiler_OpenAISettings_TemplateID" -value "{6B082F69-FE6D-478A-9B38-9D28BC4BE38E}" -option Constant
     Set-Variable -name "AIProfiler_Settings_Path" -value "/sitecore/system/Modules/AI Profiler/Settings" -option Constant
     Set-Variable -name "AIProfiler_Trees_Path" -value "$($AIProfiler_Settings_Path)/Trees" -option Constant
+    Set-Variable -name "AIProfiler_Root_FieldName" -value "Root" -option Constant
+    Set-Variable -name "AIProfiler_ProcessProfiles_FieldName" -value "Process Profiles" -option Constant
+    Set-Variable -name "AIProfiler_ApiKey_FieldName" -value "API Key" -option Constant
+    
     function Get-OpenAISettings {
         $settings = Get-Item -Path master: -Query "$($AIProfiler_Settings_Path)//*[@@templateid='$($AIProfiler_OpenAISettings_TemplateID)']"
         return $settings;
@@ -26,48 +30,82 @@ SharedFields:
         if ($SettingsItem -eq $null){
             return $null
         }
-        $apiKeyField = $SettingsItem.Fields["API Key"]
+        $apiKeyField = $SettingsItem.Fields[$AIProfiler_ApiKey_FieldName]
         if ([string]::IsNullOrEmpty($apiKeyField) -eq $null){
             return $null
         }
         return $apiKeyField.Value
     }
+    
     function Get-ContextProfiles() {
         param(
             $contextItem
         )
+        
         $treesRootItem = Get-Item -Path "master:$($AIProfiler_Trees_Path)"
         if ($treesRootItem -eq $null){
             return $null
         }
         
-        # Filter the first child that meets the criteria
-        $matchingChild = $treesRootItem.Children | Where-Object {
-            $rootField = $_.Fields["Root"]
-            if ($rootField -ne $null -and $rootField.TargetItem -ne $null) {
-                $rootItem = Get-Item -Path $rootField.TargetItem.ID
-                return ($rootItem -ne $null) -and ($contextItem.Paths.FullPath -like $rootItem.Paths.FullPath)
+        # Filter only the trees that can contain the context item
+        $filteredTrees = @()
+        $contextPath = $contextItem.Paths.Path
+        $children = $treesRootItem.Children
+        foreach($treeSetting in $children){
+            $field = [Sitecore.Data.Fields.ReferenceField]$treeSetting.Fields[$AIProfiler_Root_FieldName]
+            if ($field -ne $null){
+                $rootItem = $field.TargetItem
+                if ($contextPath.Contains($rootItem.Paths.Path)){
+                    $filteredTrees += $treeSetting
+                }
             }
-            return $false
-        } | Select-Object -First 1    
-        
-        
-        
-        
-        $rootField = $treeRootItem.Fields["Root"]
-        if ($rootField -eq $null){
+        }
+    
+        # Empty - None
+        if ($filteredTrees.Length -eq 0){
             return $null
         }
-        $rootField = [Sitecore.Data.Fields.ReferenceField]$treeRootItem.Field["Root"]
-        
-        
-        
-        
-        
+    
+        # Sort by longest path so we can take the first entry
+        $filteredTrees = $filteredTrees | Sort-Object -Property @{ Exp = { $_.Paths.Path }; Desc = $true }
+    
+        # Get the Profiles from the tree item
+        $myTreeItem = $filteredTrees[0]
+        $profilesField = [Sitecore.Data.Fields.MultilistField]$myTreeItem.Fields[$AIProfiler_ProcessProfiles_FieldName]
+        if ($profilesField -eq $null){
+            return $null
+        }
+        $profileItems = $profilesField.GetItems()
+        if ($profileItems.Length -eq 0){
+            return $null
+        }
+        else {
+            return $profileItems
+        }
     }
+    
+    function Get-SerializedItem() {
+        param(
+            $contextItem
+        )
+    
+        $simplerObject = @{
+            ItemName = $contextItem.Name
+            Fields = @()
+        }
+        
+        foreach($field in $contextItem.Fields){
+            $typedField = [Sitecore.Data.Fields.FieldTypeManager]::GetField($field)
+            if (($typedField -is [Sitecore.Data.Fields.TextField] -or $typedField -is [Sitecore.Data.Fields.HtmlField]) -and $field.Name.StartsWith("__") -ne $true){
+                $simplerObject.Fields += @{ $field.Name = $field.Value }
+            }
+        }
+        
+        $serialized = $simplerObject | ConvertTo-Json
+        return $serialized
+    }
+    
     ### EXPORT THIS AS A SEPARATED GLOBALIZED FILE
-    
-    
     
     ### 0 - Get & Escape conditions
     # 0.1 - Items with no Layout
@@ -91,14 +129,16 @@ SharedFields:
     
     ### 1 - Get Profile(s) to be used according to the item, if nothing is configured escape
     $contextProfiles = Get-ContextProfiles($item)
-    if ($contextProfiles -eq $null){
+    if ($contextProfiles -eq $null -or $contextProfiles.Length -eq 0){
+        New-ItemWorkflowEvent -Item $item -Text "[AI Profiler] No profiles configured at /sitecore/system/Modules/AI Profiler/Settings/Trees"
         Close-Window
     }
     
-    
     ### 3 - Serialize the item, and the selected profile(s)
+    $serializedItem = Get-SerializedItem($item)
+    
     ### 4 - Ask ChatGPT for the actuals
-    ### 5 - Show detected profiles
+    ### 5 - Get detected profiles
     ### 6 - Save Profile settings to Item and proceed to the next step
     
     
@@ -124,11 +164,11 @@ Languages:
         sitecore\Admin
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "51db4ce1-4431-4632-8c3d-b89d626d36cd"
+      Value: "a76614a5-d41a-403c-b6fd-da8f03202ff3"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20240518T025624Z
+      Value: 20240519T013918Z
