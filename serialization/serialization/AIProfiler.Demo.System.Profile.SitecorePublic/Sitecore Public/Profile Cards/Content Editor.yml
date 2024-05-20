@@ -8,11 +8,11 @@ SharedFields:
   Hint: Profile Card Value
   Value: |
     <tracking>
-      <profile id="40f548fe-8426-4339-bb26-fd1f3510130c" name="Sitecore People">
+      <profile id="40f548fe-8426-4339-bb26-fd1f3510130c" name="Sitecore Public">
         <key name="Content Management" value="100" />
-        <key name="Marketing" value="50" />
-        <key name="Sales" value="0" />
-        <key name="Strategy" value="70" />
+        <key name="Marketing" value="60" />
+        <key name="Sales" value="15" />
+        <key name="Strategy" value="60" />
         <key name="Technical" value="25" />
       </profile>
     </tracking>
@@ -38,11 +38,11 @@ Languages:
         sitecore\Admin
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "ae6e7a89-1d50-499c-967d-ce77067eab6a"
+      Value: "d9937840-76e3-4716-ba71-260abc44bef7"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20240418T215728Z
+      Value: 20240520T131649Z

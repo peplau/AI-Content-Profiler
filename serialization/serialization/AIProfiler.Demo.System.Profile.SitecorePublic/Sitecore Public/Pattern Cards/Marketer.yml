@@ -8,12 +8,12 @@ SharedFields:
   Hint: Pattern
   Value: |
     <tracking>
-      <profile id="40f548fe-8426-4339-bb26-fd1f3510130c" name="Sitecore People">
+      <profile id="40f548fe-8426-4339-bb26-fd1f3510130c" name="Sitecore Public">
         <key name="Content Management" value="50" />
         <key name="Marketing" value="100" />
-        <key name="Sales" value="25" />
-        <key name="Strategy" value="75" />
-        <key name="Technical" value="0" />
+        <key name="Sales" value="80" />
+        <key name="Strategy" value="80" />
+        <key name="Technical" value="15" />
       </profile>
     </tracking>
 Languages:
@@ -38,11 +38,11 @@ Languages:
         sitecore\Admin
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "50525411-b354-4039-a26c-fff922c92ba6"
+      Value: "a189c6ed-8004-4be0-8f8b-6f36e26a9411"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20240418T220510Z
+      Value: 20240520T131916Z

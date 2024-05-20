@@ -88,7 +88,25 @@ SharedFields:
         param(
             $contextItem
         )
+        $simplerObject = @{
+            ItemName = $contextItem.Name
+            Fields = @()
+        }
+        foreach($field in $contextItem.Fields){
+            $typedField = [Sitecore.Data.Fields.FieldTypeManager]::GetField($field)
+            if (($typedField -is [Sitecore.Data.Fields.TextField] -or $typedField -is [Sitecore.Data.Fields.HtmlField]) -and $field.Name.StartsWith("__") -ne $true){
+                $simplerObject.Fields += @{ $field.Name = $field.Value }
+            }
+        }
+        $serialized = $simplerObject | ConvertTo-Json
+        return $serialized
+    }
     
+    function Get-SerializedProfiles() {
+        param(
+            $profiles
+        )
+        
         $simplerObject = @{
             ItemName = $contextItem.Name
             Fields = @()
@@ -100,11 +118,9 @@ SharedFields:
                 $simplerObject.Fields += @{ $field.Name = $field.Value }
             }
         }
-        
         $serialized = $simplerObject | ConvertTo-Json
         return $serialized
     }
-    
     ### EXPORT THIS AS A SEPARATED GLOBALIZED FILE
     
     ### 0 - Get & Escape conditions
@@ -136,6 +152,7 @@ SharedFields:
     
     ### 3 - Serialize the item, and the selected profile(s)
     $serializedItem = Get-SerializedItem($item)
+    $serializedProfiles = Get-SerializedProfiles($contextProfiles)
     
     ### 4 - Ask ChatGPT for the actuals
     ### 5 - Get detected profiles
@@ -164,11 +181,11 @@ Languages:
         sitecore\Admin
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "a76614a5-d41a-403c-b6fd-da8f03202ff3"
+      Value: "50969f46-72fc-400c-ac54-d0a79c6f03d6"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20240519T013918Z
+      Value: 20240520T131230Z
