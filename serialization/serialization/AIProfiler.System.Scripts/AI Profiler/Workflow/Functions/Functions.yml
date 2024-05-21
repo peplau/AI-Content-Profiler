@@ -255,6 +255,19 @@ SharedFields:
             $trackingField.AcceptChanges()
             $trackingField.InnerField.Item.Editing.EndEdit()
         }
+        
+       # Remove the zeroed profiles
+       $profiles = $trackingField.Profiles
+       foreach($profile in $profiles){
+            $keyHigherThanZero = $profile.Keys | Where-Object{ $_.Value -gt 0 } | Select-Object -First 1
+            if ($keyHigherThanZero -eq $null){
+                $profileItem = $contextItem.Database.GetItem($profile.ProfileId)
+                $itemLink = [Sitecore.Links.ItemLink]::new($profileItem, $profileItem.ID, $profileItem, $profileItem.InnerItem.Paths.Path)
+                $trackingField.InnerField.Item.Editing.BeginEdit()
+                $trackingField.RemoveLink($itemLink)
+                $trackingField.InnerField.Item.Editing.EndEdit()
+            }
+       }
     }
 Languages:
 - Language: en
@@ -274,11 +287,11 @@ Languages:
         sitecore\Admin
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "0652bc23-39a3-4b2c-9243-e51c586438a9"
+      Value: "0f8a2cf7-3248-40cb-883e-aef4faaf6ab6"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20240521T153537Z
+      Value: 20240521T165037Z
