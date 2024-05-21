@@ -1,0 +1,51 @@
+﻿---
+ID: "56f5b716-74b9-4595-87b9-19e8e55dd6db"
+Parent: "e2479f00-f5ae-49ea-b471-6a52c03a1750"
+Template: "dd22f1b3-bd87-4db2-9e7d-f7a496888d43"
+Path: /sitecore/system/Modules/PowerShell/Script Library/AI Profiler/Workflow/Functions/Constants
+SharedFields:
+- ID: "b1a94ff0-6897-47c0-9c51-aa6acb80b1f0"
+  Hint: Script
+  Value: |
+    $AIProfiler_OpenAISettings_TemplateID = "{6B082F69-FE6D-478A-9B38-9D28BC4BE38E}" 
+    $AIProfiler_ProfileKey_TemplateID = "{44AB5107-3C73-42F0-A427-BEC549F944B9}" 
+    $AIProfiler_ProfileCard_TemplateID = "{0FC09EA4-8D87-4B0E-A5C9-8076AE863D9C}" 
+    $AIProfiler_Settings_Path = "/sitecore/system/Modules/AI Profiler/Settings" 
+    $AIProfiler_Trees_Path = "$($AIProfiler_Settings_Path)/Trees" 
+    $AIProfiler_ProcessProfiles_FieldName = "Process Profiles" 
+    $AIProfiler_Root_FieldName = "Root" 
+    $AIProfiler_Name_FieldName = "Name" 
+    $AIProfiler_ApiKey_FieldName = "API Key" 
+    $AIProfiler_Model_FieldName = "Model" 
+    $AIProfiler_ModelKey_FieldName = "Model Key" 
+    $AIProfiler_Description_FieldName = "Description" 
+    $AIProfiler_MinValue_FieldName = "MinValue" 
+    $AIProfiler_MaxValue_FieldName = "MaxValue" 
+    $AIProfiler_Details_FieldName = "Details" 
+    $AIProfiler_ProfileCardValue_FieldName = "Profile Card Value" 
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20240521T152015Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "3b35a39b-af06-4ff7-9899-e7e37fd221ce"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20240521T153027Z

@@ -1,8 +1,8 @@
 ﻿---
-ID: "12ae0e0e-00cd-4164-9f06-f645e1a529e5"
-Parent: "6b082f69-fe6d-478a-9b38-9d28bc4be38e"
-Template: "6b082f69-fe6d-478a-9b38-9d28bc4be38e"
-Path: /sitecore/templates/Modules/AI Profiler/Module/Settings/OpenAI Settings/__Standard Values
+ID: "e2479f00-f5ae-49ea-b471-6a52c03a1750"
+Parent: "fdaa6edb-8c31-4094-b663-0dba5fd1ee78"
+Template: "ab154d3d-1126-4ab4-ac21-8b86e6bd70ea"
+Path: /sitecore/system/Modules/PowerShell/Script Library/AI Profiler/Workflow/Functions
 Languages:
 - Language: en
   Versions:
@@ -10,7 +10,7 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20240517T124138Z
+      Value: 20240521T153007Z
     - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
       Hint: __Owner
       Value: |
@@ -19,16 +19,13 @@ Languages:
       Hint: __Created by
       Value: |
         sitecore\Admin
-    - ID: "88a56412-1c1e-4c06-ac05-fa2be15a6b8e"
-      Hint: Model
-      Value: "{8BDB065B-4C87-4490-A7C3-AD49FA3C077E}"
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "f5bef734-d935-496c-a7ac-0f07feb2b16d"
+      Value: "455e4d5f-e2e0-4d5d-8a5f-8c502b06bebb"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20240520T171436Z
+      Value: 20240521T153007Z

@@ -1,0 +1,284 @@
+﻿---
+ID: "40cf2ccb-0cac-46a1-8519-17e096495a91"
+Parent: "e2479f00-f5ae-49ea-b471-6a52c03a1750"
+Template: "dd22f1b3-bd87-4db2-9e7d-f7a496888d43"
+Path: /sitecore/system/Modules/PowerShell/Script Library/AI Profiler/Workflow/Functions/Functions
+SharedFields:
+- ID: "b1a94ff0-6897-47c0-9c51-aa6acb80b1f0"
+  Hint: Script
+  Value: |
+    Import-Function -Name Constants
+    
+    function Get-OpenAISettings {
+        $settings = Get-Item -Path master: -Query "$($AIProfiler_Settings_Path)//*[@@templateid='$($AIProfiler_OpenAISettings_TemplateID)']"
+        return $settings;
+    }
+    
+    function Get-ContextProfiles() {
+        param(
+            $contextItem
+        )
+        
+        $treesRootItem = Get-Item -Path "master:$($AIProfiler_Trees_Path)"
+        if ($treesRootItem -eq $null){
+            return $null
+        }
+        
+        # Filter only the trees that can contain the context item
+        $filteredTrees = @()
+        $contextPath = $contextItem.Paths.Path
+        $children = $treesRootItem.Children
+        foreach($treeSetting in $children){
+            $field = [Sitecore.Data.Fields.ReferenceField]$treeSetting.Fields[$AIProfiler_Root_FieldName]
+            if ($field -ne $null){
+                $rootItem = $field.TargetItem
+                if ($contextPath.Contains($rootItem.Paths.Path)){
+                    $filteredTrees += $treeSetting
+                }
+            }
+        }
+    
+        # Empty - None
+        if ($filteredTrees.Length -eq 0){
+            return $null
+        }
+    
+        # Sort by longest path so we can take the first entry
+        $filteredTrees = $filteredTrees | Sort-Object -Property @{ Exp = { $_.Paths.Path }; Desc = $true }
+    
+        # Get the Profiles from the tree item
+        if ($filteredTrees.Length -gt 1){
+            $myTreeItem = $filteredTrees[0]
+        }
+        else {
+            $myTreeItem = $filteredTrees
+        }
+        $profilesField = [Sitecore.Data.Fields.MultilistField]$myTreeItem.Fields[$AIProfiler_ProcessProfiles_FieldName]
+        if ($profilesField -eq $null){
+            return $null
+        }
+        $profileItems = $profilesField.GetItems()
+        if ($profileItems.Length -eq 0){
+            return $null
+        }
+        else {
+            return $profileItems
+        }
+    }
+    
+    function Get-SerializedItem() {
+        param(
+            $contextItem
+        )
+        $simplerObject = @{
+            ItemName = $contextItem.Name
+            Fields = @()
+        }
+        foreach($field in $contextItem.Fields){
+            $typedField = [Sitecore.Data.Fields.FieldTypeManager]::GetField($field)
+            if (($typedField -is [Sitecore.Data.Fields.TextField] -or $typedField -is [Sitecore.Data.Fields.HtmlField]) -and $field.Name.StartsWith("__") -ne $true){
+                $simplerObject.Fields += @{ $field.Name = $field.Value }
+            }
+        }
+        $serialized = $simplerObject | ConvertTo-Json
+        return $serialized
+    }
+    
+    function Get-FieldValue(){
+        param( $item, $fieldName, $defaultValue = "" )
+        $field = $item.Fields[$fieldName]
+        if ($field -eq $null){
+            return $defaultValue
+        }
+        return $field.Value
+    }
+    
+    function Get-SerializedProfiles() {
+        param(
+            $profiles
+        )
+        
+        $simplerObjects = @()
+        foreach($profile in $profiles){
+    
+            $simplerObject = @{
+                ProfileKeys = @();
+                ProfileCards = @();
+                Description = Get-FieldValue $profile $AIProfiler_Description_FieldName;
+                ProfileName = Get-FieldValue $profile $AIProfiler_Name_FieldName $profile.Name
+                ProfileId = $profile.ID.ToString()
+            }
+            
+            $keyItems = $profile.Children | Where-Object { $_.TemplateID -eq $AIProfiler_ProfileKey_TemplateID }
+            foreach($keyItem in $keyItems){
+                $simplerObject.ProfileKeys += @{
+                    KeyName = Get-FieldValue $keyItem $AIProfiler_Name_FieldName $profile.Name;
+                    MinValue = Get-FieldValue $keyItem $AIProfiler_MinValue_FieldName;
+                    MaxValue = Get-FieldValue $keyItem $AIProfiler_MaxValue_FieldName
+                }
+            }
+    
+            $profileCardItems = Get-ChildItem -Path "master:$($profile.Paths.Path)" -Recurse | Where-Object { $_.TemplateID -eq $AIProfiler_ProfileCard_TemplateID }
+            foreach($profileItem in $profileCardItems){
+                $profileCardValues = $()
+                $xmlContent = Get-FieldValue $profileItem $AIProfiler_ProfileCardValue_FieldName
+                if ($xmlContent -ne ""){
+                    $xml = [xml]$xmlContent
+                    $keyNodes = $xml.SelectNodes("//key")
+                    foreach($keyNode in $keyNodes){
+                        $profileCardValues += @{
+                            $keyNode.name = $keyNode.value
+                        }
+                    }
+                }
+                $simplerObject.ProfileCards += @{
+                    ProfileCardId = $profileItem.ID.ToString();
+                    ProfileCardName = Get-FieldValue $profileItem $AIProfiler_Name_FieldName $profileItem.Name;
+                    Details = Get-FieldValue $profileItem $AIProfiler_Details_FieldName;
+                    Description = Get-FieldValue $profileItem $AIProfiler_Description_FieldName;
+                    ProfileCardValue = $profileCardValues
+                }
+            }
+            
+            $simplerObjects += $simplerObject
+        }
+        $serialized = $simplerObjects | ConvertTo-Json  -Depth 4
+        return $serialized
+    }
+    
+    function Get-MessageFromGpt(){
+        param( $system, $message, $apiKey, $model)
+        
+        $headers = @{
+            "Content-Type" = "application/json"
+            "Authorization" = "Bearer $($apiKey)"
+        }
+        $requestData = @{
+            model = $model
+            messages = @(
+                @{
+                    role = "system"
+                    content = $system
+                },
+                @{
+                    role = "user"
+                    content = $message
+                }
+            )
+            max_tokens = 1000
+        }
+        $body = $requestData | ConvertTo-Json -Depth 3
+        
+        try {
+            $response = Invoke-RestMethod -Uri "https://api.openai.com/v1/chat/completions" -Method Post -Headers $headers -Body $body
+            $responseData = $response.choices[0].message.content
+            return $responseData
+        }
+        catch {
+            return $null
+        }    
+    }
+    
+    function Get-ProfileIdsFromGpt(){
+        param( $serializedItem, $serializedProfiles, $apiKey, $model )
+        
+        $sb = New-Object -TypeName "System.Text.StringBuilder"
+        [void]$sb.AppendLine("You will help a Sitecore XP content editor to find out what are the best Profile Cards for a given Content Item")
+        [void]$sb.AppendLine("INPUT: ")
+        [void]$sb.AppendLine("- Profiles (JSON)")
+        [void]$sb.AppendLine("- ContentItem (JSON)")
+        [void]$sb.AppendLine("OUTPUT: The IDs returned (JSON)")
+        [void]$sb.AppendLine("Skip any explanations, output the JSON with the results and nothing else")
+        [void]$sb.AppendLine("Return maximum of 1 ProfileCardId for each ProfileId")
+        [void]$sb.AppendLine("Return only includes a ProfileCardId if the matching score is over 25% - Ignore anything below that number")
+        [void]$sb.AppendLine("Example of valid output: ")
+        [void]$sb.AppendLine("[{ProfileCardId:ID1,ProfileId:ID2},{ProfileCardId:ID3,ProfileId:ID4}]")
+        $system = $sb.ToString()
+        
+        $sb = New-Object -TypeName "System.Text.StringBuilder"
+        [void]$sb.AppendLine("PROFILES:")
+        [void]$sb.AppendLine("---")
+        [void]$sb.AppendLine($serializedProfiles)
+        [void]$sb.AppendLine("---")
+        [void]$sb.AppendLine()
+        [void]$sb.AppendLine("CONTENT:")
+        [void]$sb.AppendLine("---")
+        [void]$sb.AppendLine($serializedItem)
+        [void]$sb.AppendLine("---")
+        $message = $sb.ToString()
+        
+        try {
+            $retString = Get-MessageFromGpt $system $message $apiKey $model
+            
+            # Remove ```json from string
+            $parsedString = $retString.Replace('```json','').Replace('```]','').Replace('```','')
+            $jsonReturn = $parsedString | ConvertFrom-Json
+            return $jsonReturn
+        }
+        catch {
+            return $null
+        }    
+    }
+    
+    function Set-ItemProfiles {
+        param( $contextItem, $profileIds )
+        
+        # Get $trackingField from the $contextItem
+        $trackingField = $null
+        [Sitecore.Analytics.Data.ProfileUtil]::GetProfiles($contextItem, [ref]$trackingField)
+        
+        # Reset the profiles
+        for (($i = 0); $i -lt $trackingField.Profiles.Length; $i++) {
+            $trackingField.Profiles[$i].Presets = [System.Collections.Generic.Dictionary[string, double]]::new()
+            for (($ki = 0); $ki -lt $trackingField.Profiles[$i].Keys.Length; $ki++){
+                $trackingField.Profiles[$i].Keys[$ki].Value = $trackingField.Profiles[$i].Keys[$ki].DefaultValue
+            }
+        }    
+    
+        # Loop thru the Ids
+        foreach($profileIdEntry in $profileIds){
+            # Get the profile that corresponds to the one provided 
+            $profileToSetup = $trackingField.Profiles | Where-Object{ $_.ProfileID.ToString() -eq $profileIdEntry.ProfileId } | Select-Object -First 1
+            
+            # Get $profileCardItem and the profile card name
+            $profileCardItem = $contextItem.Database.GetItem($profileIdEntry.ProfileCardId)
+            $profileCardName = Get-FieldValue $profileCardItem $AIProfiler_Name_FieldName
+            
+            # Configure new Presets 
+            $profileToSetup.Presets = [System.Collections.Generic.Dictionary[string, double]]::new()
+            $profileToSetup.Presets.Add($profileCardName.ToLower(), 100)
+            $profileToSetup.SaveToField = $true
+    
+            # Save changes        
+            [Sitecore.Analytics.Data.TrackingField]::UpdateKeyValues($profileToSetup)
+            $trackingField.InnerField.Item.Editing.BeginEdit()
+            $trackingField.AcceptChanges()
+            $trackingField.InnerField.Item.Editing.EndEdit()
+        }
+    }
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20240521T152218Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "0652bc23-39a3-4b2c-9243-e51c586438a9"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20240521T153537Z
