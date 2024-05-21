@@ -1,0 +1,94 @@
+﻿---
+ID: "c7fab8bf-99bc-4971-b41a-3ab8cfa63ccd"
+Parent: "fdaa6edb-8c31-4094-b663-0dba5fd1ee78"
+Template: "dd22f1b3-bd87-4db2-9e7d-f7a496888d43"
+Path: "/sitecore/system/Modules/PowerShell/Script Library/AI Profiler/Module/AI Profiler - Workflow Action"
+SharedFields:
+- ID: "b1a94ff0-6897-47c0-9c51-aa6acb80b1f0"
+  Hint: Script
+  Value: |
+    Import-Function -Name Functions
+    
+    $item = $SitecoreContextItem
+    
+    ### 0 - Get & Escape conditions
+    # 0.1 - Items with no Layout
+    if ($item.Fields[[Sitecore.FieldIDs]::LayoutField] -eq $null -or [string]::IsNullOrEmpty($item.Fields[[Sitecore.FieldIDs]::LayoutField])){
+        Close-Window
+    }
+    
+    # 0.2 - Get OpenAISettings - No OpenAISettings item
+    $settingsItem = Get-OpenAISettings
+    if ($settingsItem -eq $null){
+        New-ItemWorkflowEvent -Item $item -Text "[AI Profiler] You must setup your OpenAISettings item"
+        Close-Window
+    }
+    
+    # 0.3 - Get APIKey - No APIKey is set
+    $apiKey = Get-FieldValue $settingsItem $AIProfiler_ApiKey_FieldName $null
+    if ([string]::IsNullOrEmpty($apiKey) -eq $null){
+        New-ItemWorkflowEvent -Item $item -Text "[AI Profiler] You must setup your 'API Key' at the OpenAISettings item"
+        Close-Window
+    }
+    
+    # 0.4 - Get Model - No Model is set
+    $modelField = [Sitecore.Data.Fields.ReferenceField]$settingsItem.Fields[$AIProfiler_Model_FieldName]
+    if ($modelField -eq $null){
+        New-ItemWorkflowEvent -Item $item -Text "[AI Profiler] You must setup your 'Model' at the OpenAISettings item"
+        Close-Window
+    }
+    $modelItem = $modelField.TargetItem
+    if ($modelItem -eq $null){
+        New-ItemWorkflowEvent -Item $item -Text "[AI Profiler] You must setup your 'Model' at the OpenAISettings item"
+        Close-Window
+    }
+    $model = Get-FieldValue $modelItem $AIProfiler_ModelKey_FieldName $null
+    if ($model -eq $null){
+        New-ItemWorkflowEvent -Item $item -Text "[AI Profiler] You must setup your 'Model' at the OpenAISettings item"
+        Close-Window
+    }
+    
+    ### 1 - Get Profile(s) to be used according to the item, if nothing is configured escape
+    $contextProfiles = Get-ContextProfiles($item)
+    if ($contextProfiles -eq $null -or $contextProfiles.Length -eq 0){
+        New-ItemWorkflowEvent -Item $item -Text "[AI Profiler] No profiles configured at /sitecore/system/Modules/AI Profiler/Settings/Trees"
+        Close-Window
+    }
+    
+    ### 3 - Serialize the item, and the selected profile(s)
+    $serializedItem = Get-SerializedItem $item
+    $serializedProfiles = Get-SerializedProfiles $contextProfiles
+    
+    ### 4 - Ask ChatGPT for the detected profiles
+    $detectedProfileIds = Get-ProfileIdsFromGpt $serializedItem $serializedProfiles $apiKey $model
+    
+    ### 5 - Save Profile settings to Item and proceed to the next step
+    $ret = Set-ItemProfiles $item $detectedProfileIds
+    
+    Close-Window
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20240517T201631Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "557e97e7-4203-4a7b-aa33-9d7bf2a8f721"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20240521T180723Z

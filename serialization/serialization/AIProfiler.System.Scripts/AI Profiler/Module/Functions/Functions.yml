@@ -2,7 +2,7 @@
 ID: "40cf2ccb-0cac-46a1-8519-17e096495a91"
 Parent: "e2479f00-f5ae-49ea-b471-6a52c03a1750"
 Template: "dd22f1b3-bd87-4db2-9e7d-f7a496888d43"
-Path: /sitecore/system/Modules/PowerShell/Script Library/AI Profiler/Workflow/Functions/Functions
+Path: /sitecore/system/Modules/PowerShell/Script Library/AI Profiler/Module/Functions/Functions
 SharedFields:
 - ID: "b1a94ff0-6897-47c0-9c51-aa6acb80b1f0"
   Hint: Script

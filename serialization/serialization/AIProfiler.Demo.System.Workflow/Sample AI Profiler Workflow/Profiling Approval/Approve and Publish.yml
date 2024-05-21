@@ -1,15 +1,12 @@
 ﻿---
-ID: "404f8c62-6d4b-4e9a-b2a8-21cf991cc724"
-Parent: "212bacae-5f61-4d46-bdcf-11b57581c33c"
+ID: "886f7ce2-6251-4998-98a3-6a61bb56919b"
+Parent: "15c80eb1-4232-4cf4-bed1-202138df01b8"
 Template: "cb01f9fc-c187-46b3-ab0b-97a8468d8303"
-Path: /sitecore/system/Workflows/Sample AI Profiler Workflow/Awaiting Approval/Approve
+Path: /sitecore/system/Workflows/Sample AI Profiler Workflow/Profiling Approval/Approve and Publish
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
   Hint: __Icon
   Value: office/16x16/check.png
-- ID: "82a7c02f-9a55-4bfe-b494-d1713d4be9ff"
-  Hint: Suppress Comment
-  Value: 1
 - ID: "dcbebc58-6124-4100-a248-fc717d6c78d5"
   Hint: Next state
   Value: "{0AF6892D-162C-4C33-B062-F0A115B7F2DD}"
@@ -31,11 +28,11 @@ Languages:
         sitecore\Admin
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "58a04723-4b41-47f0-8fc4-e7f5bd8c4be7"
+      Value: "26795ac1-6b05-4ddb-8f67-3431d7dc5a08"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20240517T211112Z
+      Value: 20240517T190048Z

@@ -2,7 +2,7 @@
 ID: "d0d50c1b-afaa-4530-8fae-6f1898d097cb"
 Parent: "886f7ce2-6251-4998-98a3-6a61bb56919b"
 Template: "419f8ffb-2713-4cec-86a7-7585a727fe25"
-Path: /sitecore/system/Workflows/Sample AI Profiler Workflow/Profiling Approval/Approve/Validation Action
+Path: /sitecore/system/Workflows/Sample AI Profiler Workflow/Profiling Approval/Approve and Publish/Validation Action
 SharedFields:
 - ID: "202f2a2c-6274-467f-a9c8-3ec4585a3060"
   Hint: Critical Error

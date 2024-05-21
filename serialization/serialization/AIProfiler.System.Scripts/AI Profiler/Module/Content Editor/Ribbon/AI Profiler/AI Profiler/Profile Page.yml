@@ -1,15 +1,21 @@
 ﻿---
-ID: "c7fab8bf-99bc-4971-b41a-3ab8cfa63ccd"
-Parent: "fdaa6edb-8c31-4094-b663-0dba5fd1ee78"
+ID: "5b212b1c-3ae1-48ff-afa0-3f83943c0e81"
+Parent: "fc0df991-69ed-42eb-be56-e4df7b5de09d"
 Template: "dd22f1b3-bd87-4db2-9e7d-f7a496888d43"
-Path: /sitecore/system/Modules/PowerShell/Script Library/AI Profiler/Workflow/AI Profile Item
+Path: /sitecore/system/Modules/PowerShell/Script Library/AI Profiler/Module/Content Editor/Ribbon/AI Profiler/AI Profiler/Profile Page
 SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: /~/icon/office/32x32/brain.png
+- ID: "1c76313e-3c8c-4807-a826-135d10c39299"
+  Hint: ShowRule
+  Value: <ruleset />
 - ID: "b1a94ff0-6897-47c0-9c51-aa6acb80b1f0"
   Hint: Script
   Value: |
-    $item = $SitecoreContextItem
-    
     Import-Function -Name Functions
+    
+    $item = $SitecoreContextItem
     
     ### 0 - Get & Escape conditions
     # 0.1 - Items with no Layout
@@ -20,38 +26,38 @@ SharedFields:
     # 0.2 - Get OpenAISettings - No OpenAISettings item
     $settingsItem = Get-OpenAISettings
     if ($settingsItem -eq $null){
-        New-ItemWorkflowEvent -Item $item -Text "[AI Profiler] You must setup your OpenAISettings item"
+        Write-Log "[AI Profiler] You must setup your OpenAISettings item" -Log Error
         Close-Window
     }
     
     # 0.3 - Get APIKey - No APIKey is set
     $apiKey = Get-FieldValue $settingsItem $AIProfiler_ApiKey_FieldName $null
     if ([string]::IsNullOrEmpty($apiKey) -eq $null){
-        New-ItemWorkflowEvent -Item $item -Text "[AI Profiler] You must setup your 'API Key' at the OpenAISettings item"
+        Write-Log "[AI Profiler] You must setup your 'API Key' at the OpenAISettings item" -Log Error
         Close-Window
     }
     
     # 0.4 - Get Model - No Model is set
     $modelField = [Sitecore.Data.Fields.ReferenceField]$settingsItem.Fields[$AIProfiler_Model_FieldName]
     if ($modelField -eq $null){
-        New-ItemWorkflowEvent -Item $item -Text "[AI Profiler] You must setup your 'Model' at the OpenAISettings item"
+        Write-Log "[AI Profiler] You must setup your 'Model' at the OpenAISettings item" -Log Error
         Close-Window
     }
     $modelItem = $modelField.TargetItem
     if ($modelItem -eq $null){
-        New-ItemWorkflowEvent -Item $item -Text "[AI Profiler] You must setup your 'Model' at the OpenAISettings item"
+        Write-Log "[AI Profiler] You must setup your 'Model' at the OpenAISettings item" -Log Error
         Close-Window
     }
     $model = Get-FieldValue $modelItem $AIProfiler_ModelKey_FieldName $null
     if ($model -eq $null){
-        New-ItemWorkflowEvent -Item $item -Text "[AI Profiler] You must setup your 'Model' at the OpenAISettings item"
+        Write-Log "[AI Profiler] You must setup your 'Model' at the OpenAISettings item" -Log Error
         Close-Window
     }
     
     ### 1 - Get Profile(s) to be used according to the item, if nothing is configured escape
     $contextProfiles = Get-ContextProfiles($item)
     if ($contextProfiles -eq $null -or $contextProfiles.Length -eq 0){
-        New-ItemWorkflowEvent -Item $item -Text "[AI Profiler] No profiles configured at /sitecore/system/Modules/AI Profiler/Settings/Trees"
+        Write-Log "[AI Profiler] No profiles configured at /sitecore/system/Modules/AI Profiler/Settings/Trees" -Log Info
         Close-Window
     }
     
@@ -65,9 +71,20 @@ SharedFields:
     ### 5 - Save Profile settings to Item and proceed to the next step
     $ret = Set-ItemProfiles $item $detectedProfileIds
     
-    #$comment = Show-Input -Prompt "Enter a comment: $($item.ID)"
-    
     Close-Window
+- ID: "f62c67b4-28b6-4a6f-91cb-db78cf054f4e"
+  Hint: EnableRule
+  Value: |
+    <ruleset>
+      <rule
+        uid="{28920CE9-6482-4659-B327-7C35C3BBAACF}">
+        <conditions>
+          <condition
+            id="{A45DBBAE-F74F-4EFE-BBD5-24395E0AF945}"
+            uid="689B710B231A47D9B41EB8E23F3DC5A3" />
+        </conditions>
+      </rule>
+    </ruleset>
 Languages:
 - Language: en
   Versions:
@@ -75,7 +92,7 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20240517T201631Z
+      Value: 20240521T210354Z
     - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
       Hint: __Owner
       Value: |
@@ -86,11 +103,11 @@ Languages:
         sitecore\Admin
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "910c8b58-b522-4951-97cc-f677b9117e0b"
+      Value: "baa5a995-8a4f-4d49-8304-8dbeaef15484"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20240521T153035Z
+      Value: 20240521T222302Z

@@ -1,8 +1,15 @@
 ﻿---
-ID: "e2479f00-f5ae-49ea-b471-6a52c03a1750"
-Parent: "fdaa6edb-8c31-4094-b663-0dba5fd1ee78"
-Template: "ab154d3d-1126-4ab4-ac21-8b86e6bd70ea"
-Path: /sitecore/system/Modules/PowerShell/Script Library/AI Profiler/Workflow/Functions
+ID: "fdaa6edb-8c31-4094-b663-0dba5fd1ee78"
+Parent: "9bf56275-8c85-4dc6-b309-61f42dfaf5be"
+Template: "6d82fcd8-c379-443c-97a9-c6423c71e7d5"
+Path: /sitecore/system/Modules/PowerShell/Script Library/AI Profiler/Module
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Office/32x32/jar_coffee_bean.png
+- ID: "218ca464-cb77-4c97-b141-34871ecae00b"
+  Hint: Enabled
+  Value: 1
 Languages:
 - Language: en
   Versions:
@@ -10,7 +17,7 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20240521T153007Z
+      Value: 20240517T201421Z
     - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
       Hint: __Owner
       Value: |
@@ -21,11 +28,11 @@ Languages:
         sitecore\Admin
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "455e4d5f-e2e0-4d5d-8a5f-8c502b06bebb"
+      Value: "bc1d3726-5297-4d81-aafe-b3c319231b51"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20240521T153007Z
+      Value: 20240517T201421Z
