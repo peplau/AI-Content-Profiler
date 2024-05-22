@@ -2,7 +2,7 @@
 ID: "5b212b1c-3ae1-48ff-afa0-3f83943c0e81"
 Parent: "fc0df991-69ed-42eb-be56-e4df7b5de09d"
 Template: "dd22f1b3-bd87-4db2-9e7d-f7a496888d43"
-Path: /sitecore/system/Modules/PowerShell/Script Library/AI Profiler/Module/Content Editor/Ribbon/AI Profiler/AI Profiler/Profile Page
+Path: /sitecore/system/Modules/PowerShell/Script Library/AI Profiler/Module/Content Editor/Ribbon/Analyze/AI Profiler/Profile Page
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
   Hint: __Icon
