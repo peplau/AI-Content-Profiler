@@ -2,6 +2,8 @@
 
 A **Powershell Module** for **Sitecore XP** that leverages **Generative AI** to **analyze page content** and automatically assign the proper **Profile Cards**, enabling marketers to effortlessly implement **behavioral targeting** and streamlining the process providing **personalized user experiences**.
 
+![AI Content Profiler for Sitecore XP](/images/AI-Content-Profiler-Banner.png)
+
 ## Problem Statement
 
 Marketers constantly strive to deliver targeted, personalized content to their audiences. Profile Cards in Sitecore XP play a crucial role in achieving this by enabling the segmentation of users and the delivery of content tailored to their interests and behaviors. 
