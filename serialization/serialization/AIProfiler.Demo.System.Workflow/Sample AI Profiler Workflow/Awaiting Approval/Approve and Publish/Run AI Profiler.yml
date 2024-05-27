@@ -1,8 +1,8 @@
 ﻿---
-ID: "3567e491-94b7-4909-b302-5e18ef215c35"
-Parent: "a88e9420-2ab4-4061-a490-059e2ba64cb0"
+ID: "e19497bb-628d-4abd-a2ce-90efecfebcc7"
+Parent: "0b72fbb9-2437-4c64-a7be-19b3dffa933c"
 Template: "02bd31b0-ced3-46f4-ab42-11bdfd8d967c"
-Path: /sitecore/system/Workflows/Sample AI Profiler Workflow/Profiling Approval/Repeat Profiling/Run AI Profiler
+Path: /sitecore/system/Workflows/Sample AI Profiler Workflow/Awaiting Approval/Approve and Publish/Run AI Profiler
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
   Hint: __Icon

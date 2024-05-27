@@ -1,8 +1,8 @@
 ﻿---
-ID: "af06fe84-6f4b-478f-989d-71fd1e415641"
-Parent: "404f8c62-6d4b-4e9a-b2a8-21cf991cc724"
+ID: "94eaac3d-5233-4a32-83f2-f292940f525d"
+Parent: "0b72fbb9-2437-4c64-a7be-19b3dffa933c"
 Template: "419f8ffb-2713-4cec-86a7-7585a727fe25"
-Path: /sitecore/system/Workflows/Sample AI Profiler Workflow/Awaiting Approval/Skip AI Profiling and Publish/Validation Action
+Path: /sitecore/system/Workflows/Sample AI Profiler Workflow/Awaiting Approval/Approve and Publish/Validation Action
 SharedFields:
 - ID: "202f2a2c-6274-467f-a9c8-3ec4585a3060"
   Hint: Critical Error
@@ -24,9 +24,6 @@ Languages:
   Versions:
   - Version: 1
     Fields:
-    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
-      Hint: __Lock
-      Value: <r />
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20071113T152154
