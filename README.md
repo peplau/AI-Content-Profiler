@@ -1,6 +1,6 @@
 # AI Content Profiler for Sitecore XP
 
-A **Powershell Module** for **Sitecore XP** that leverages **Generative AI** to **analyze page content** and automatically assign the proper **Profile Cards**, enabling marketers to effortlessly implement **behavioral targeting** and streamlining the process of providing **personalized user experiences**.
+A **Powershell Module** for **Sitecore XP** that leverages **Generative AI** to **analyze page content** and automatically assign the proper **Profile Cards**, enabling marketers to effortlessly implement **behavioral targeting** and streamlining the process of creating **personalized user experiences**.
 
 ![AI Content Profiler for Sitecore XP](/images/AI-Content-Profiler-Banner.png)
 
