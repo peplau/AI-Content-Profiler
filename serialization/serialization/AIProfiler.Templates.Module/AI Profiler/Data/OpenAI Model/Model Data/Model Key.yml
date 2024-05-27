@@ -1,8 +1,18 @@
 ﻿---
-ID: "12ae0e0e-00cd-4164-9f06-f645e1a529e5"
-Parent: "6b082f69-fe6d-478a-9b38-9d28bc4be38e"
-Template: "6b082f69-fe6d-478a-9b38-9d28bc4be38e"
-Path: /sitecore/templates/Modules/AI Profiler/Module/Settings/OpenAI Settings/__Standard Values
+ID: "2a497ab7-1320-4530-ae40-28466b3f34e0"
+Parent: "812e95a7-1f92-4200-b619-109edcc615fb"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/Modules/AI Profiler/Data/OpenAI Model/Model Data/Model Key
+SharedFields:
+- ID: "1eb8ae32-e190-44a6-968d-ed904c794ebf"
+  Hint: Source
+  Value: 
+- ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
+  Hint: Type
+  Value: "Single-Line Text"
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 100
 Languages:
 - Language: en
   Versions:
@@ -10,7 +20,7 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20240517T124138Z
+      Value: 20240517T125002Z
     - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
       Hint: __Owner
       Value: |
@@ -19,16 +29,13 @@ Languages:
       Hint: __Created by
       Value: |
         sitecore\Admin
-    - ID: "88a56412-1c1e-4c06-ac05-fa2be15a6b8e"
-      Hint: Model
-      Value: "{8BDB065B-4C87-4490-A7C3-AD49FA3C077E}"
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "f5bef734-d935-496c-a7ac-0f07feb2b16d"
+      Value: "3c0758d9-c5a2-4bf1-978d-37f5ad5c7587"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20240520T171436Z
+      Value: 20240517T151340Z

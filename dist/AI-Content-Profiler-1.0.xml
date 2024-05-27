@@ -1,0 +1,226 @@
+<project>
+  <Metadata>
+    <metadata>
+      <PackageName>AI-Content-Profiler</PackageName>
+      <Author>Rodrigo Peplau</Author>
+      <Version>1.0</Version>
+      <Revision />
+      <License />
+      <Comment />
+      <Attributes />
+      <Readme />
+      <Publisher />
+      <PostStep />
+      <PackageID />
+    </metadata>
+  </Metadata>
+  <SaveProject>True</SaveProject>
+  <Sources>
+    <xitems>
+      <Converter>
+        <ItemToEntryConverter>
+          <Transforms />
+        </ItemToEntryConverter>
+      </Converter>
+      <Entries>
+        <x-item>/master/sitecore/templates/Modules/AI Profiler/{C88C9FE2-4933-4D0B-A87A-23FE7D16FF27}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Modules/AI Profiler/Data/{90397482-5028-4AC1-8DE5-ACC92530A305}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Modules/AI Profiler/Data/OpenAI Model/__Standard Values/{FB6015DC-544E-437B-AA9A-335711D77E68}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Modules/AI Profiler/Data/OpenAI Model/{11B02989-8613-4FE7-8E69-1D49EB6C5410}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Modules/AI Profiler/Data/OpenAI Model/Model Data/{812E95A7-1F92-4200-B619-109EDCC615FB}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Modules/AI Profiler/Data/OpenAI Model/Model Data/Model Key/{2A497AB7-1320-4530-AE40-28466B3F34E0}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Modules/AI Profiler/Settings/{91C835E3-3EA9-466D-8FA2-1858B378700A}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Modules/AI Profiler/Settings/OpenAI Settings/__Standard Values/{12AE0E0E-00CD-4164-9F06-F645E1A529E5}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Modules/AI Profiler/Settings/OpenAI Settings/{6B082F69-FE6D-478A-9B38-9D28BC4BE38E}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Modules/AI Profiler/Settings/OpenAI Settings/OpenAI Settings/{E656152A-782E-4227-AA08-4FBB5A8037C7}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Modules/AI Profiler/Settings/OpenAI Settings/OpenAI Settings/API Key/{FA498811-5E62-4462-B0D9-383804C0CE80}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Modules/AI Profiler/Settings/OpenAI Settings/OpenAI Settings/Model/{88A56412-1C1E-4C06-AC05-FA2BE15A6B8E}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Modules/AI Profiler/Settings/Tree Settings/__Standard Values/{F43DDB46-BF9B-49A5-9B8A-A1156524A1D1}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Modules/AI Profiler/Settings/Tree Settings/{E95D9CCC-790D-48A0-94AD-139D3CEDDAAF}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Modules/AI Profiler/Settings/Tree Settings/Tree Settings/{351D844C-A56A-4584-8DC8-011DD5FDFCAE}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Modules/AI Profiler/Settings/Tree Settings/Tree Settings/Process Profiles/{3A765639-33DB-4ED3-A7D5-2351EC5908C1}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/Modules/AI Profiler/Settings/Tree Settings/Tree Settings/Root/{3209F692-19FD-4F76-AA6E-F6FDC4A2263E}/invariant/0</x-item>
+      </Entries>
+      <SkipVersions>False</SkipVersions>
+      <Include />
+      <Exclude />
+      <Name>AIProfiler.Templates.Module</Name>
+    </xitems>
+    <xitems>
+      <Converter>
+        <ItemToEntryConverter>
+          <Transforms />
+        </ItemToEntryConverter>
+      </Converter>
+      <Entries>
+        <x-item>/master/sitecore/system/Modules/PowerShell/Script Library/AI Profiler/{9BF56275-8C85-4DC6-B309-61F42DFAF5BE}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Modules/PowerShell/Script Library/AI Profiler/Module/{FDAA6EDB-8C31-4094-B663-0DBA5FD1EE78}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Modules/PowerShell/Script Library/AI Profiler/Module/AI Profiler - Workflow Action/{C7FAB8BF-99BC-4971-B41A-3AB8CFA63CCD}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Modules/PowerShell/Script Library/AI Profiler/Module/Content Editor/{C44B5BD2-4DFA-4CE3-8801-9A9BEE7D433E}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Modules/PowerShell/Script Library/AI Profiler/Module/Content Editor/Ribbon/{7CC5818F-9D35-4F94-928F-C6DFFC598E07}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Modules/PowerShell/Script Library/AI Profiler/Module/Content Editor/Ribbon/Analyze/{7A1767C4-CA2B-4396-8FBD-64D7E92C49FD}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Modules/PowerShell/Script Library/AI Profiler/Module/Content Editor/Ribbon/Analyze/AI Profiler/{FC0DF991-69ED-42EB-BE56-E4DF7B5DE09D}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Modules/PowerShell/Script Library/AI Profiler/Module/Content Editor/Ribbon/Analyze/AI Profiler/Profile Page/{5B212B1C-3AE1-48FF-AFA0-3F83943C0E81}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Modules/PowerShell/Script Library/AI Profiler/Module/Content Editor/Ribbon/Analyze/AI Profiler/Profile Tree/{D913FAE1-24B8-47A6-802B-E786211B388E}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Modules/PowerShell/Script Library/AI Profiler/Module/Functions/{E2479F00-F5AE-49EA-B471-6A52C03A1750}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Modules/PowerShell/Script Library/AI Profiler/Module/Functions/Constants/{56F5B716-74B9-4595-87B9-19E8E55DD6DB}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Modules/PowerShell/Script Library/AI Profiler/Module/Functions/Functions/{40CF2CCB-0CAC-46A1-8519-17E096495A91}/invariant/0</x-item>
+      </Entries>
+      <SkipVersions>False</SkipVersions>
+      <Include />
+      <Exclude />
+      <Name>AIProfiler.System.Scripts</Name>
+    </xitems>
+    <xitems>
+      <Converter>
+        <ItemToEntryConverter>
+          <Transforms />
+        </ItemToEntryConverter>
+      </Converter>
+      <Entries>
+        <x-item>/master/sitecore/system/Modules/AI Profiler/{1E7884CB-D291-4F68-8BE5-484110780723}/invariant/0</x-item>
+      </Entries>
+      <SkipVersions>False</SkipVersions>
+      <Include />
+      <Exclude />
+      <Name>AIProfiler.System.ModuleFolder</Name>
+    </xitems>
+    <xitems>
+      <Converter>
+        <ItemToEntryConverter>
+          <Transforms>
+            <InstallerConfigurationTransform>
+              <Options>
+                <BehaviourOptions>
+                  <ItemMode>Undefined</ItemMode>
+                  <ItemMergeMode>Undefined</ItemMergeMode>
+                </BehaviourOptions>
+              </Options>
+            </InstallerConfigurationTransform>
+          </Transforms>
+        </ItemToEntryConverter>
+      </Converter>
+      <Entries>
+        <x-item>/master/sitecore/system/Modules/AI Profiler/Data/{B3C6BB9F-66F6-4856-B0E8-5CEA16C8A375}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Modules/AI Profiler/Data/Models/{09E58042-818E-447C-8257-3CDEFE81330C}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Modules/AI Profiler/Data/Models/gpt-35-turbo/{6A4CC6D7-EC06-4833-B591-0EE4EB78E3C6}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Modules/AI Profiler/Data/Models/gpt-4/{90C13E96-FCFE-472F-A202-6E053638DD63}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Modules/AI Profiler/Data/Models/gpt-4o/{8BDB065B-4C87-4490-A7C3-AD49FA3C077E}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Modules/AI Profiler/Data/Models/gpt-4-turbo/{D0384E4E-E665-4DE5-9811-92027617C4D7}/invariant/0</x-item>
+      </Entries>
+      <SkipVersions>False</SkipVersions>
+      <Include />
+      <Exclude />
+      <Name>AIProfiler.System.ModuleFolder.Data</Name>
+    </xitems>
+    <xitems>
+      <Converter>
+        <ItemToEntryConverter>
+          <Transforms>
+            <InstallerConfigurationTransform>
+              <Options>
+                <BehaviourOptions>
+                  <ItemMode>Undefined</ItemMode>
+                  <ItemMergeMode>Undefined</ItemMergeMode>
+                </BehaviourOptions>
+              </Options>
+            </InstallerConfigurationTransform>
+          </Transforms>
+        </ItemToEntryConverter>
+      </Converter>
+      <Entries>
+        <x-item>/master/sitecore/system/Modules/AI Profiler/Settings/{B7527AFD-61C6-4331-81C0-E11A5C3873D5}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Modules/AI Profiler/Settings/Trees/{D8AAE5AD-1CD3-4018-8DFF-C53FC067A69D}/invariant/0</x-item>
+      </Entries>
+      <SkipVersions>False</SkipVersions>
+      <Include />
+      <Exclude />
+      <Name>AIProfiler.System.ModuleFolder.Settings.Trees</Name>
+    </xitems>
+    <xitems>
+      <Converter>
+        <ItemToEntryConverter>
+          <Transforms>
+            <InstallerConfigurationTransform>
+              <Options>
+                <BehaviourOptions>
+                  <ItemMode>Undefined</ItemMode>
+                  <ItemMergeMode>Undefined</ItemMergeMode>
+                </BehaviourOptions>
+              </Options>
+            </InstallerConfigurationTransform>
+          </Transforms>
+        </ItemToEntryConverter>
+      </Converter>
+      <Entries>
+        <x-item>/master/sitecore/system/Modules/AI Profiler/Settings/OpenAI Settings/{021ED2AA-0464-4DBE-82FE-6CC522155AAF}/invariant/0</x-item>
+      </Entries>
+      <SkipVersions>False</SkipVersions>
+      <Include />
+      <Exclude />
+      <Name>AIProfiler.System.ModuleFolder.OpenAISettings</Name>
+    </xitems>
+    <xitems>
+      <Converter>
+        <ItemToEntryConverter>
+          <Transforms />
+        </ItemToEntryConverter>
+      </Converter>
+      <Entries>
+        <x-item>/master/sitecore/system/Marketing Control Panel/Profiles/Sitecore Public/{40F548FE-8426-4339-BB26-FD1F3510130C}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Marketing Control Panel/Profiles/Sitecore Public/Content Management/{5722E002-B757-403E-A294-6B6039E75F15}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Marketing Control Panel/Profiles/Sitecore Public/Marketing/{058B33CD-0D72-478A-8DDD-41D4BF8D938E}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Marketing Control Panel/Profiles/Sitecore Public/Pattern Cards/{F85CF7B5-CE6F-490F-B3AC-108CDBBBB8F1}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Marketing Control Panel/Profiles/Sitecore Public/Pattern Cards/Content Editor/{37317F07-DFD2-481D-A6C6-2C68110AD37F}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Marketing Control Panel/Profiles/Sitecore Public/Pattern Cards/Marketer/{58B753AE-2693-42EB-8C71-9F3C93F2814C}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Marketing Control Panel/Profiles/Sitecore Public/Pattern Cards/Sales Person/{BEC08188-58E2-46C4-9155-BE832759F760}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Marketing Control Panel/Profiles/Sitecore Public/Pattern Cards/Technical Person/{E46C5C25-5F43-473C-9C80-3AECD97D25BE}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Marketing Control Panel/Profiles/Sitecore Public/Profile Cards/{13ECA607-8ECF-479E-9B95-74649AFE6729}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Marketing Control Panel/Profiles/Sitecore Public/Profile Cards/Content Editor/{BFE345F4-5B24-4B43-9FAE-F5DFE8B66AB3}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Marketing Control Panel/Profiles/Sitecore Public/Profile Cards/Marketer/{82BFB3A8-044E-4058-85DE-48643914BE73}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Marketing Control Panel/Profiles/Sitecore Public/Profile Cards/Sales Person/{A1FA34BE-E7BE-4696-80F8-9C25EC1DCF1F}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Marketing Control Panel/Profiles/Sitecore Public/Profile Cards/Technical Person/{04013591-3BF4-4217-B08A-40E07C1CABFC}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Marketing Control Panel/Profiles/Sitecore Public/Sales/{622A5FEA-5685-40A3-92BC-C2C1B6781D4F}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Marketing Control Panel/Profiles/Sitecore Public/Strategy/{DCE99E8D-F26F-4BFD-B5B4-ABDA342E7441}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Marketing Control Panel/Profiles/Sitecore Public/Technical/{849EADC0-C0AE-4EE9-95E8-01E74A87C0C4}/invariant/0</x-item>
+      </Entries>
+      <SkipVersions>False</SkipVersions>
+      <Include />
+      <Exclude />
+      <Name>AIProfiler.Demo.System.Profile.SitecorePublic</Name>
+    </xitems>
+    <xitems>
+      <Converter>
+        <ItemToEntryConverter>
+          <Transforms />
+        </ItemToEntryConverter>
+      </Converter>
+      <Entries>
+        <x-item>/master/sitecore/system/Workflows/Sample AI Profiler Workflow/{5E160BF9-0C34-4631-8FF2-D55B8B9CD324}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Workflows/Sample AI Profiler Workflow/Approved/{0AF6892D-162C-4C33-B062-F0A115B7F2DD}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Workflows/Sample AI Profiler Workflow/Approved/Auto Publish/{051357E5-9930-4DC4-9CCE-EADBD5AEA270}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Workflows/Sample AI Profiler Workflow/Awaiting Approval/{212BACAE-5F61-4D46-BDCF-11B57581C33C}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Workflows/Sample AI Profiler Workflow/Awaiting Approval/Approve and Publish/{0B72FBB9-2437-4C64-A7BE-19B3DFFA933C}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Workflows/Sample AI Profiler Workflow/Awaiting Approval/Approve and Publish/Run AI Profiler/{E19497BB-628D-4ABD-A2CE-90EFECFEBCC7}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Workflows/Sample AI Profiler Workflow/Awaiting Approval/Approve and Publish/Validation Action/{94EAAC3D-5233-4A32-83F2-F292940F525D}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Workflows/Sample AI Profiler Workflow/Awaiting Approval/Reject/{DB7D5C4A-0322-400F-9B18-848C1EF32E40}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Workflows/Sample AI Profiler Workflow/Draft/__OnSave/{00CFAD8A-950B-43EF-8E83-2FC7DFBD57B3}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Workflows/Sample AI Profiler Workflow/Draft/__OnSave/Auto Submit Action/{072E4FC8-3CF7-4B5F-B3C0-75F62CE0DF27}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Workflows/Sample AI Profiler Workflow/Draft/{0E700BA6-B33E-4F46-ADA2-8DF5F2408739}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Workflows/Sample AI Profiler Workflow/Draft/Submit/{BBD5B900-3098-4B99-89C4-E348E1275485}/invariant/0</x-item>
+      </Entries>
+      <SkipVersions>False</SkipVersions>
+      <Include />
+      <Exclude />
+      <Name>AIProfiler.Demo.System.Workflow</Name>
+    </xitems>
+  </Sources>
+  <Converter>
+    <TrivialConverter>
+      <Transforms />
+    </TrivialConverter>
+  </Converter>
+  <Include />
+  <Exclude />
+  <Name />
+</project>

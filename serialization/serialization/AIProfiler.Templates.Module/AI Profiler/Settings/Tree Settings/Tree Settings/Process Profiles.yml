@@ -2,7 +2,7 @@
 ID: "3a765639-33db-4ed3-a7d5-2351ec5908c1"
 Parent: "351d844c-a56a-4584-8dc8-011dd5fdfcae"
 Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
-Path: /sitecore/templates/Modules/AI Profiler/Module/Settings/Tree Settings/Tree Settings/Process Profiles
+Path: /sitecore/templates/Modules/AI Profiler/Settings/Tree Settings/Tree Settings/Process Profiles
 SharedFields:
 - ID: "1eb8ae32-e190-44a6-968d-ed904c794ebf"
   Hint: Source
@@ -47,11 +47,11 @@ Languages:
         sitecore\Admin
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "3a274390-48c0-4739-9e06-d7e020e0adf1"
+      Value: "82efa237-cfdc-4236-92e4-f206e1e60260"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20240517T154027Z
+      Value: 20240520T172857Z

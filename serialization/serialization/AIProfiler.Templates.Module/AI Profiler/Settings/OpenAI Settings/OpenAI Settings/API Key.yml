@@ -2,7 +2,7 @@
 ID: "fa498811-5e62-4462-b0d9-383804c0ce80"
 Parent: "e656152a-782e-4227-aa08-4fbb5a8037c7"
 Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
-Path: /sitecore/templates/Modules/AI Profiler/Module/Settings/OpenAI Settings/OpenAI Settings/API Key
+Path: /sitecore/templates/Modules/AI Profiler/Settings/OpenAI Settings/OpenAI Settings/API Key
 SharedFields:
 - ID: "21828437-ea4b-40a1-8c61-4ce60ea41db6"
   Hint: Validate Button

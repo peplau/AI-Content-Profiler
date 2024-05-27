@@ -1,18 +1,18 @@
 ﻿---
-ID: "6b082f69-fe6d-478a-9b38-9d28bc4be38e"
+ID: "e95d9ccc-790d-48a0-94ad-139d3ceddaaf"
 Parent: "91c835e3-3ea9-466d-8fa2-1858b378700a"
 Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
-Path: /sitecore/templates/Modules/AI Profiler/Module/Settings/OpenAI Settings
+Path: /sitecore/templates/Modules/AI Profiler/Settings/Tree Settings
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
   Hint: __Icon
-  Value: /~/icon/office/32x32/reset_settings.png
+  Value: /~/icon/core/32x32/tree.png
 - ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
   Hint: __Base template
   Value: "{1930BBEB-7805-471A-A3BE-4858AC7CF696}"
 - ID: "f7d48a55-2158-4f02-9356-756654404f73"
   Hint: __Standard values
-  Value: "{12AE0E0E-00CD-4164-9F06-F645E1A529E5}"
+  Value: "{F43DDB46-BF9B-49A5-9B8A-A1156524A1D1}"
 Languages:
 - Language: en
   Versions:
@@ -20,7 +20,7 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20240517T124132Z
+      Value: 20240517T151204Z
     - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
       Hint: __Owner
       Value: |
@@ -31,11 +31,11 @@ Languages:
         sitecore\Admin
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "d53dc594-f58b-4de4-9083-0bfee64ade57"
+      Value: "b508dfb8-f7ad-4aeb-9c75-dfbb3f4498c2"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20240517T151137Z
+      Value: 20240527T164723Z

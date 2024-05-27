@@ -17,7 +17,7 @@
       },
       {
         "name": "AIProfiler.Templates.Module",
-        "path": "/sitecore/templates/Modules/AI Profiler/Module"
+        "path": "/sitecore/templates/Modules/AI Profiler"
       }
     ],
     "excludedFields": [

@@ -1,8 +1,8 @@
 ﻿---
-ID: "812e95a7-1f92-4200-b619-109edcc615fb"
-Parent: "11b02989-8613-4fe7-8e69-1d49eb6c5410"
+ID: "e656152a-782e-4227-aa08-4fbb5a8037c7"
+Parent: "6b082f69-fe6d-478a-9b38-9d28bc4be38e"
 Template: "e269fbb5-3750-427a-9149-7aa950b49301"
-Path: /sitecore/templates/Modules/AI Profiler/Module/Data/OpenAI Model/Model Data
+Path: /sitecore/templates/Modules/AI Profiler/Settings/OpenAI Settings/OpenAI Settings
 Languages:
 - Language: en
   Versions:
@@ -10,7 +10,7 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20240517T125002Z
+      Value: 20240517T124411Z
     - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
       Hint: __Owner
       Value: |
@@ -21,11 +21,11 @@ Languages:
         sitecore\Admin
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "dd1a01f3-2771-43a5-a481-7698362f9ff7"
+      Value: "e19fc947-ea26-4386-976e-1ef346c09539"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20240517T151340Z
+      Value: 20240517T151353Z
