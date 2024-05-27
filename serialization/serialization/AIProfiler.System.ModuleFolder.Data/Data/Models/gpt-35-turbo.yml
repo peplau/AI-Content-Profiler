@@ -9,6 +9,10 @@ SharedFields:
   Value: 100
 Languages:
 - Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: GPT 3.5 Turbo
   Versions:
   - Version: 1
     Fields:
@@ -20,11 +24,11 @@ Languages:
       Value: "gpt-3.5-turbo"
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "4b1434f8-9427-4777-a49b-749a31678819"
+      Value: "90eb0134-3863-41ae-8ced-bdad8bc0f776"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20240517T125109Z
+      Value: 20240527T185258Z
