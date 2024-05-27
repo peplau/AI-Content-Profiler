@@ -32,7 +32,7 @@ By streamlining this process, the module allows marketers to adopt Behavioural T
 ## Prerequisites
 * [Sitecore XP](https://developers.sitecore.com/downloads/Sitecore_Experience_Platform)
 * [Sitecore Powershell Extensions](https://doc.sitecorepowershell.com/installation)
-* [OpenAI API Key](./CreatingAPIKey.md) - Before using the module, you need to configure the OpenAI API Key. If you need help to get your API Key, follow the steps in the [Creating an OpenAI API Key guide](CreatingAPIKey.md)
+* [OpenAI API Key](CreatingAPIKey.md) - Before using the module, you need to configure the OpenAI API Key. If you need help to get your API Key, follow the steps in the [Creating an OpenAI API Key guide](CreatingAPIKey.md)
 
 ## Installation
 
