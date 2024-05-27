@@ -49,7 +49,7 @@ For a quick installation via Sitecore Package, follow the steps below:
 
 To use SCS packages (.itempackage) as build artifacts in your continuous integration pipeline, install it in your delivery pipeline:
 
-1. Download the latest .itempackage package from the [Releases](/releases) page;
+1. Download the latest .itempackage package from the [Releases](/releases/) page;
 1. Install the package in your delivery pipeline [following this instructions]("https://doc.sitecore.com/xp/en/developers/104/developer-tools/create-and-install-a-sitecore-content-serialization-package.html#install-an-scs-package-in-your-delivery-pipeline").
 
 ### Post-installation Steps
