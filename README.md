@@ -42,7 +42,7 @@ By streamlining this process, the module allows marketers to adopt Behavioural T
 
 For a quick installation via Sitecore Package, follow the steps below:
 
-1. Download the latest .zip package from the [Releases](/releases/) page;
+1. Download the latest .zip package from the [Releases]("https://github.com/peplau/AI-Content-Profiler/releases") page;
 1. Install the package with the Sitecore Installation Wizard (In case of conflicts use the *Merge/Merge* option).
 
 ### Option 2 - With Sitecore CLI Content Serialization (.itempackage)
