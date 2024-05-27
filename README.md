@@ -42,15 +42,15 @@ By streamlining this process, the module allows marketers to adopt Behavioural T
 
 For a quick installation via Sitecore Package, follow the steps below:
 
-1. Download the latest .zip package from the [Releases]("https://github.com/peplau/AI-Content-Profiler/releases") page;
+1. Download the latest .zip package from the [Releases](https://github.com/peplau/AI-Content-Profiler/releases) page;
 1. Install the package with the Sitecore Installation Wizard (In case of conflicts use the *Merge/Merge* option).
 
 ### Option 2 - With Sitecore CLI Content Serialization (.itempackage)
 
 To use SCS packages (.itempackage) as build artifacts in your continuous integration pipeline, install it in your delivery pipeline:
 
-1. Download the latest .itempackage package from the [Releases](/releases/) page;
-1. Install the package in your delivery pipeline [following this instructions]("https://doc.sitecore.com/xp/en/developers/104/developer-tools/create-and-install-a-sitecore-content-serialization-package.html#install-an-scs-package-in-your-delivery-pipeline").
+1. Download the latest .itempackage package from the [Releases](/releases) page;
+1. Install the package in your delivery pipeline [following this instructions](https://doc.sitecore.com/xp/en/developers/104/developer-tools/create-and-install-a-sitecore-content-serialization-package.html#install-an-scs-package-in-your-delivery-pipeline).
 
 ### Post-installation Steps
 
@@ -61,7 +61,7 @@ No matter the option selected, after installing the package, you need to sync th
 1. Go to Settings Ribbon, Rebuild All button, Sync Library with Content Editor Ribbon;
    ![AI Profiler Chunk in Content Editor](/images/Sync-Library-Ribbon.png)
 
-1. (Optional) If you want to use the sample "Sitecore Public" Profile, [Deploy all marketing definitions]("https://doc.sitecore.com/xp/en/users/104/sitecore-experience-platform/deploy-marketing-definitions-and-taxonomies.html#deploy-all-marketing-definitions-and-taxonomies") from the Marketing Control Panel.
+1. (Optional) If you want to use the sample "Sitecore Public" Profile, [Deploy all marketing definitions](https://doc.sitecore.com/xp/en/users/104/sitecore-experience-platform/deploy-marketing-definitions-and-taxonomies.html#deploy-all-marketing-definitions-and-taxonomies) from the Marketing Control Panel.
 
 ## Configuring the Module
 
