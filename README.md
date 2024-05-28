@@ -75,6 +75,14 @@ No matter the option selected, after installing the package, you need to sync th
 1. Populate the fields **API Key** with your [OpenAI API Key](#prerequisites) and select the **Model** you want to use;
   ![OpenAI Settings item](/images/OpenAI-Settings-Item.png)
 
-
+1. Under **/sitecore/system/Modules/AI Profiler/Settings/Trees/Home**, create at least one item with the template **Tree Settings** pointing to the root item of the content tree you want to analyze:
+   ![Tree Settings item](/images/Tree-Settings.png)
+    1. **Root**: Point to the root item of the content tree to be profiled; 									
+	   - If more than one **Tree Settings** has **Root** pointing to items under the same path, the setting whose path is closer to the item being analyzed will be used. For instance:
+	      - TreeSettings1: */sitecore/content/Home*
+		  - TreeSettings2: */sitecore/content/Home/Products*
+		     - If the item analyzed is */sitecore/content/Home/Products/CDP*, then TreeSettings2 is used
+			 - If the item analyzed is */sitecore/content/Home/ContactUs*, then TreeSettings1 is used
+	1. **Process Profiles**: Select the Profile Cards to be used in the analysis;
 
 ## Usage
