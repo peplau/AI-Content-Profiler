@@ -99,7 +99,7 @@ After the module is installed and configured, you will see the following buttons
 
 <hr/>
 
-### CASE 1 - Profiling an individual Page
+### USE CASE 1 - Profiling an individual Page
 
 You can profile an individual page by selecting an item at the tree in Content Editor and clicking the **Profile Page** button under the **Analyze** ribbon (see screenshot above). The page content will be analyzed and Profile Cards assigned accordingly. 
 
@@ -117,21 +117,21 @@ When the process finishes, you can then see the assigned Profile Cards in Conten
 
 <hr/>
 
-### CASE 2 - Profiling an entire Content Tree
+### USE CASE 2 - Profiling an entire Content Tree
 
 To profile an entire content tree, select the root item to be analyzed in Content Editor and click the **Profile Tree** button under the **Analyze** ribbon. The content tree will be entirely analyzed, and Profile Cards  assigned accordingly. 
 
-When the process finishes, you can then see the assigned Profile Cards in Content Editor, as seen in [CASE 1](#case-1---profiling-an-individual-page).
+When the process finishes, you can then see the assigned Profile Cards in Content Editor, as seen in [USE CASE 1](#case-1---profiling-an-individual-page).
 
 > [!NOTE]
 > When profiling a full Tree, items will only be processed if they have some Layout (also known as *Page Items*). Items without Layout configured will be skipped.
 
 > [!TIP]
-> If after profiling a page you still don't see the Profile Cards assigned to your pages, please go throught the same debugging steps as described in [CASE 1](#case-1---profiling-an-individual-page).
+> If after profiling a page you still don't see the Profile Cards assigned to your pages, please go throught the same debugging steps as described in [USE CASE 1](#case-1---profiling-an-individual-page).
 
 <hr/>
 
-### CASE 3 - Automatic profiling triggered in a Workflow 
+### USE CASE 3 - Automatic profiling triggered in a Workflow 
 
 To keep the page profiling always updated as your content changes, you can automate the profiling process with Workflows. 
 
@@ -162,6 +162,8 @@ The chosen one is determided by the path that is closer to the profiled item:
 1. If the profiled path is */sitecore/content/Home/Products/CDP*, **TreeSettings2** is used because this path is closer to */sitecore/content/Home/Products* than */sitecore/content/Home*;
 1. If the profiled path is */sitecore/content/Home/ContactUs*, **TreeSettings1** is used because */sitecore/content/Home* is the only one matching this path.
 
+<hr/>
+
 ### Q2 - After profiling a page (or an entire tree) I still don't see any Profile Cards assigned, what should I do?
 
 If after profiling a page you still don't see the Profile Cards assigned to them, verify the following:
@@ -170,6 +172,8 @@ If after profiling a page you still don't see the Profile Cards assigned to them
     1. The **Process Profiles** field points to at least one valid Profile, the Profiles are correctly deployed and have meaningful information that can be used to profile your content.
 1. The profiled item has some valid content, and the content matches the Profile Cards you are expecting to see assigned.
 1. Check the Sitecore CM logs for any errors or warnings that might have occurred during the profiling process.
+
+<hr/>
 
 ### Q3 - What elements are important for a Profile to be relevant and effectively utilized in profiling?
 
@@ -196,7 +200,8 @@ When the content profiling starts, your Profiles are serialized and sent to the 
 
 > [!TIP]
 > To ensure the best results when building your Profiles, make sure to include meaningful content on each of these field.
-   
+
+<hr/>   
 
 ### Q4 - What elements are important for my content to be effectively profiled?
 
