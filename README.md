@@ -131,7 +131,7 @@ When the process finishes, you can then see the assigned Profile Cards in Conten
 
 <hr/>
 
-### CASE 3 - Automatic profiling triggered via Workflow 
+### CASE 3 - Automatic profiling triggered in a Workflow 
 
 To help automate the profiling process, you can trigger the profiling of an items via a Sitecore Workflow. 
 
