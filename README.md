@@ -91,6 +91,8 @@ After the module is installed and configured, you will see the following buttons
 > - **Profile Page** is disabled if the selected item has no Layout (is not a *Page Item*);
 > - **Profile Tree** is disabled if the selected item has no Layout and no children items underneat it.
 
+<hr/>
+
 ### CASE 1 - Profiling an individual Page
 
 You can profile an individual page by selecting an item at the tree in Content Editor and clicking the **Profile Page** button under the **Analyze** ribbon (see screenshot above). The page content will be analyzed and Profile Cards assigned accordingly. 
