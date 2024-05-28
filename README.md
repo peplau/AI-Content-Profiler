@@ -100,11 +100,11 @@ When the process finishes, you can then see the assigned Profile Cards in Conten
 ![Assigned Profile Card to the profiled item](/images/Profile-Cards-Assigned.png)
 
 > [!TIP]
-> If after profiling a page you still don't see the Profile Cards assigned, verify the following:
-> 1. That the **Tree Settings** item is correctly configured, including:
+> If after profiling a page you still don't see the Profile Cards assigned to it, follow the steps below:
+> 1. Check if the **Tree Settings** item is correctly configured, including:
 >     1. The **Root** field has a path that encompasses the profiled item;
 >     1. The **Process Profiles** field points to at least one valid Profile, the Profiles are correctly deployed and have meaningful information that can be used to profile your content.
-> 1. The profiled item has some valid content, and the content matches the Profile Cards you are expecting to see assigned.
+> 1. Verify if the profiled item has any valid content, and the content matches the Profile Cards you are expecting to see assigned.
 > 1. Check the Sitecore CM logs for any errors or warnings that might have occurred during the profiling process.
 
 ### CASE 2 - Profiling an entire Content Tree
@@ -148,4 +148,36 @@ If after profiling a page you still don't see the Profile Cards assigned to them
 1. The profiled item has some valid content, and the content matches the Profile Cards you are expecting to see assigned.
 1. Check the Sitecore CM logs for any errors or warnings that might have occurred during the profiling process.
 
-### Q3 - What does a Profile need to be relevant and correctly used for profiling?
+### Q3 - What elements are important for a Profile to be relevant and effectively utilized in profiling?
+
+A Profile is a collection of attributes that represent a specific audience segment. To be effective, a Profile should contain attributes that are relevant to the audience segment it represents. 
+
+The module comes with a sample Profile called **Sitecore Public**, representing some possible profiles of visitors interested about Sitecore content. 
+
+![Demo Profile called 'Sitecore Public'](/images/Demo-Profile--Sitecore-Public.png)
+
+When the content profiling starts, Profiles are serialized and sent to the GenAI as part of the content to be analyzed. 
+
+The following Profile fields are serialized: (in the same order as in the above screenshot)
+
+1. **Profile** (Template: */sitecore/templates/System/Analytics/Profile*)   
+       1. Name
+       1. Description
+1. **Profile Keys** (Template: */sitecore/templates/System/Analytics/Profile Key*)
+       1. Name
+       1. MinValue
+       1. MaxValue
+1. **Profile Cards** (Template: */sitecore/templates/System/Analytics/Profile Card*)
+       1. Name
+       1. Details
+       1. Description
+       1. Profile Card Value
+
+> [!TIP]
+> To ensure the best results when building your Profiles, make sure to include meaningful content on each of these fields :
+   
+
+
+
+
+
