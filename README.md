@@ -1,6 +1,6 @@
 # AI Content Profiler for Sitecore XP
 
-A **Powershell Module** for **Sitecore XP** that leverages **Generative AI** to **analyze page content** and automatically assign the proper **Profile Cards**, enabling marketers to effortlessly implement **behavioral targeting** and streamlining the process providing **personalized user experiences**.
+A **Powershell Module** for **Sitecore XP** that leverages **Generative AI** to **analyze page content** and automatically assign the proper **Profile Cards**, enabling marketers to effortlessly implement **behavioral targeting** and streamlining the process of creating **personalized user experiences**.
 
 ![AI Content Profiler for Sitecore XP](/images/AI-Content-Profiler-Banner.png)
 
@@ -61,7 +61,7 @@ To use SCS packages (.itempackage) as build artifacts in your continuous integra
 
 No matter the option selected, after installing the package, you need to sync the library with the Content Editor to make the module available for use:
 
-1. Open Sitecore PowerShell ISE from Launch Page;
+1. Open Sitecore PowerShell ISE;
 
 1. Go to Settings Ribbon, Rebuild All button, Sync Library with Content Editor Ribbon;
    ![AI Profiler Chunk in Content Editor](/images/Sync-Library-Ribbon.png)
