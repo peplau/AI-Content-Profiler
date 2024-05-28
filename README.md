@@ -194,4 +194,6 @@ The content of your pages is analyzed by the GenAI to determine the Profile Card
 - Text-typed fields (Single-Line, Multi-Line, Rich Text) that are not Sitecore internal (names not starting with "__")
 
 > [!TIP]
-> To ensure the best profiling results, make sure to include meaningful content at least on the main important fields of your pages (Eg: Title, Summary, Body).
+> To ensure the best profiling results, make sure to include meaningful content at least on the main fields of your pages (Eg: Title, Summary, Body, etc).
+>
+> Also make sure the content of your pages relates with the Profiles used for content profiling. For instance, content about **Sports** has a low chance to be identified with any Profile Card in the demo Profile **"Sitecore Public"**.
