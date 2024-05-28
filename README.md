@@ -88,8 +88,7 @@ After the module is installed and configured, you will see these two buttons in 
 ![AI Profiler Chunk in Content Editor](/images/AI-Profiler-Content-Editor.png)
 
 > [!NOTE]
-> - The **Profile Page** button will only be enabled if the selected item has some Layout (also known as a *Page Item*);
-> - The **Profile Tree** button will only be enabled if the selected item has some Layout, and also has children items underneat it.
+> The **Profile Page** button will be disabled if the selected item doesn't have some Layout configured (is not a *Page Item*). The **Profile Tree** button will be disabled if the selected item doesn't have some Layout, or no children items underneat it.
 
 
 ### CASE 1 - Profiling an individual Page
