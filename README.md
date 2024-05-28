@@ -43,21 +43,27 @@ The module is distributed in two flavors:
 - **Option 1 - Using a Sitecore Package (.zip)**, better for quick manual installations;
 - **Option 2 - Sitecore CLI Content Serialization (.itempackage)**, more appropriated for automated deployments and continuous integration pipelines.
 
-### - Option 1 - Using the Sitecore Package (.zip)
+<hr/>
+
+### Option 1 - Using the Sitecore Package (.zip)
 
 For a quick installation via Sitecore Package, follow the steps below:
 
 1. Download the latest .zip package from the [Releases](https://github.com/peplau/AI-Content-Profiler/releases) page;
 1. Install the package with the Sitecore Installation Wizard (In case of conflicts use the *Merge/Merge* option).
 
-### - Option 2 - With Sitecore CLI Content Serialization (.itempackage)
+<hr/>
+
+### Option 2 - With Sitecore CLI Content Serialization (.itempackage)
 
 To use SCS packages (.itempackage) as build artifacts in your continuous integration pipeline, install it in your delivery pipeline:
 
 1. Download the latest .itempackage package from the [Releases](https://github.com/peplau/AI-Content-Profiler/releases) page;
 1. Install the package in your delivery pipeline [following this instructions](https://doc.sitecore.com/xp/en/developers/104/developer-tools/create-and-install-a-sitecore-content-serialization-package.html#install-an-scs-package-in-your-delivery-pipeline).
 
-### - Post-installation Steps
+<hr/>
+
+### Post-installation Steps
 
 No matter the option selected, after installing the package, you need to sync the library with the Content Editor to make the module available for use:
 
@@ -109,6 +115,8 @@ When the process finishes, you can then see the assigned Profile Cards in Conten
 > 1. Verify if the profiled item has any valid content, and the content matches the Profile Cards you are expecting to see assigned.
 > 1. Check the Sitecore CM logs for any errors or warnings that might have occurred during the profiling process.
 
+<hr/>
+
 ### CASE 2 - Profiling an entire Content Tree
 
 To profile an entire content tree, select the root item to be analyzed in Content Editor and click the **Profile Tree** button under the **Analyze** ribbon. The content tree will be entirely analyzed, and Profile Cards  assigned accordingly. 
@@ -120,6 +128,8 @@ When the process finishes, you can then see the assigned Profile Cards in Conten
 
 > [!TIP]
 > If after profiling a page you still don't see the Profile Cards assigned to your pages, please go throught the same debugging steps as described in [CASE 1](#case-1---profiling-an-individual-page).
+
+<hr/>
 
 ### CASE 3 - Automatic profiling triggered via Workflow 
 
