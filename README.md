@@ -88,20 +88,19 @@ After the module is installed and configured, you will see the following buttons
 ![AI Profiler Chunk in Content Editor](/images/AI-Profiler-Content-Editor.png)
 
 > [!NOTE]
-> - **Profile Page** is disabled if the selected has no Layout (is not a *Page Item*);
-> - **Profile Tree** is disabled if the selected has no Layout and no children items underneat it.
+> - **Profile Page** is disabled if the selected item has no Layout (is not a *Page Item*);
+> - **Profile Tree** is disabled if the selected item has no Layout and no children items underneat it.
 
 
 ### CASE 1 - Profiling an individual Page
 
-You can profile an individual page by selecting an item at the tree in Content Editor and clicking the **Profile Page** button under the **Analyze** ribbon (see screenshot above). 
+You can profile an individual page by selecting an item at the tree in Content Editor and clicking the **Profile Page** button under the **Analyze** ribbon (see screenshot above). The page content will be analyzed and Profile Cards assigned accordingly. 
 
-The page content will be analyzed and Profile Cards assigned accordingly. When the process finishes, you can then see the assigned Profile Cards in Content Editor at the top right corner:
+When the process finishes, you can then see the assigned Profile Cards in Content Editor at the top right corner:
 
 ![Assigned Profile Card to the profiled item](/images/Profile-Cards-Assigned.png)
 
-> [!TIP]
-> If after profiling a page you still don't see the Profile Cards assigned, verify the following:
+> [!TIP] - If after profiling a page you still don't see the Profile Cards assigned, verify the following:
 > 1. That the **Tree Settings** item is correctly configured, including:
 >     1. The **Root** field has a path that encompasses the profiled item;
 >     1. The **Process Profiles** field points to at least one valid Profile, the Profiles are correctly deployed and have meaningful information that can be use to profile your content.
