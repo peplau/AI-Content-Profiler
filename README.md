@@ -81,14 +81,15 @@ No matter the option selected, after installing the package, you need to sync th
 	1. **Process Profiles**: Select the Profile Cards to be used in the profile. Profile Cards are stored under **/sitecore/system/Marketing Control Panel/Profiles** and can be defined by your marketing team to represent your most common audiences. For further information about creating Profiles [check this documentation page](https://doc.sitecore.com/xp/en/users/104/sitecore-experience-platform/content-profiling.html);
 
 
-## Usage
+## Usage Instructions
 
-After the module is installed and configured, you will see these two buttons in the Content Editor Ribbon, under **Analyze**:
+After the module is installed and configured, you will see the following buttons in the Content Editor Ribbon, under **Analyze**:
 
 ![AI Profiler Chunk in Content Editor](/images/AI-Profiler-Content-Editor.png)
 
 > [!NOTE]
-> The **Profile Page** button will be disabled if the selected item doesn't have some Layout configured (is not a *Page Item*). The **Profile Tree** button will be disabled if the selected item doesn't have some Layout, or no children items underneat it.
+> - The **Profile Page** button is disabled if the selected item doesn't have a Layout configured (is not a *Page Item*);
+> - The **Profile Tree** button is disabled if the selected item doesn't have a Layout, or no children items underneat it.
 
 
 ### CASE 1 - Profiling an individual Page
