@@ -4,6 +4,25 @@ A **Powershell Module** for **Sitecore XP** that leverages **Generative AI** to 
 
 ![AI Content Profiler for Sitecore XP](/images/AI-Content-Profiler-Banner.png)
 
+1. [Problem Statement](#problem-statement)
+1. [Behavioural Targeted Personalization made easy](#behavioural-targeted-personalization-made-easy)
+   1. [Key Benefits](#key-benefits)
+1. [Prerequisites](#prerequisites)
+1. [Installation](#installation)
+   1. [Option 1 - Using the Sitecore Package (.zip)](#option-1---using-the-sitecore-package-zip)
+   1. [Option 2 - With Sitecore CLI Content Serialization (.itempackage)](#option-2---with-sitecore-cli-content-serialization-itempackage)
+   1. [Post-installation Steps](#post-installation-steps)
+1. [Configuring the Module](#configuring-the-module)
+1. [Usage Instructions](#usage-instructions)
+   1. [USE CASE 1 - Profiling an individual Page](#use-case-1---profiling-an-individual-page)
+   1. [USE CASE 2 - Profiling an entire Content Tree](#use-case-2---profiling-an-entire-content-tree)
+   1. [USE CASE 3 - Automatic profiling triggered in a Workflow](#use-case-3---automatic-profiling-triggered-in-a-workflow)
+1. [Frequently Asked Questions (FAQ)](#frequently-asked-questions-faq)
+   1. [Q1 - When profiling a page, how is the Tree Settings item selected?](#q1---when-profiling-a-page-how-is-the-tree-settings-item-selected)
+   1. [Q2 - After profiling a page (or an entire tree) I still don't see any Profile Cards assigned, what should I do?](#q2---after-profiling-a-page-or-an-entire-tree-i-still-dont-see-any-profile-cards-assigned-what-should-i-do)
+   1. [Q3 - What elements are important for a Profile to be relevant and effectively utilized in profiling?](#q3---what-elements-are-important-for-a-profile-to-be-relevant-and-effectively-utilized-in-profiling)
+   1. [Q4 - What elements are important for my content to be effectively profiled?](#q4---what-elements-are-important-for-my-content-to-be-effectively-profiled)
+
 ## Problem Statement
 
 Marketers constantly strive to deliver targeted, personalized content to their audiences. Profile Cards in Sitecore XP play a crucial role in achieving this by enabling the segmentation of users and the delivery of content tailored to their interests and behaviors. 
