@@ -87,12 +87,14 @@ After the module is installed and configured, you will see these two buttons in 
 
 ![AI Profiler Chunk in Content Editor](/images/AI-Profiler-Content-Editor.png)
 
+> [!NOTE]
+> - The **Profile Page** button will only be enabled if the selected item has some Layout (also known as a *Page Item*);
+> - The **Profile Tree** button will only be enabled if the selected item has some Layout, and also has children items underneat it.
+
+
 ### CASE 1 - Profiling an individual Page
 
 You can profile an individual page by selecting an item at the tree in Content Editor and clicking the **Profile Page** button under the **Analyze** ribbon (see screenshot above). 
-
-> [!NOTE]
-> The **Profile Page** button will only be enabled if the selected item has some Layout (also known as a *Page Item*). Items without Layout configured will be ignored.
 
 The module will analyze the page content and assign Profile Cards accordingly. When the process finishes, you can then see the assigned Profile Cards in Content Editor at the top right corner:
 
