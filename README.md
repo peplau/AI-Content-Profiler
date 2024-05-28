@@ -100,7 +100,8 @@ When the process finishes, you can then see the assigned Profile Cards in Conten
 
 ![Assigned Profile Card to the profiled item](/images/Profile-Cards-Assigned.png)
 
-> [!TIP] - If after profiling a page you still don't see the Profile Cards assigned, verify the following:
+> [!TIP]
+> If after profiling a page you still don't see the Profile Cards assigned, verify the following:
 > 1. That the **Tree Settings** item is correctly configured, including:
 >     1. The **Root** field has a path that encompasses the profiled item;
 >     1. The **Process Profiles** field points to at least one valid Profile, the Profiles are correctly deployed and have meaningful information that can be use to profile your content.
