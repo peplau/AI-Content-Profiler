@@ -133,6 +133,17 @@ When the process finishes, you can then see the assigned Profile Cards in Conten
 
 ### CASE 3 - Automatic profiling triggered via Workflow 
 
+To help automate the profiling process, you can trigger the profiling of an items via a Sitecore Workflow. 
+
+The module comes with a sample workflow called **Sample AI Profiler Workflow**. When using this workflow, the content profiling is triggered at the **Run AI Profiler** action, after the command **"Approve and Publish"** is executed (normally by the content reviewer).
+
+![Sample AI Profiler Workflow](/images/Demo-Workflow.png)
+
+> [!TIP]
+> You can easily integrate the **Run AI Profiler** action in your custom workflows. To do so, copy the OOTB action to your workflow, or follow the steps below:
+> 1. Create a new action item under your workflow command using the template **/sitecore/templates/Modules/PowerShell Console/PowerShell Script Workflow Action**
+> 1. Point the **Script** field to **/sitecore/system/Modules/PowerShell/Script Library/AI Profiler/Module/AI Profiler - Workflow Action**
+> 1. Edit the Enable Rule field as shown in the screenshot above, by selecting the condition "where the item has a layout"
 
 ## Frequently Asked Questions (FAQ)
 
