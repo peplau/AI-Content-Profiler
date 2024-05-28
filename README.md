@@ -75,14 +75,58 @@ No matter the option selected, after installing the package, you need to sync th
 1. Populate the fields **API Key** with your [OpenAI API Key](#prerequisites) and select the **Model** you want to use;
   ![OpenAI Settings item](/images/OpenAI-Settings-Item.png)
 
-1. Under **/sitecore/system/Modules/AI Profiler/Settings/Trees/Home**, create at least one item with the template **Tree Settings** pointing to the root item of the content tree you want to analyze:
+1. Under **/sitecore/system/Modules/AI Profiler/Settings/Trees/Home**, create at least one item with the template **Tree Settings** (Insert Options are configured, use the Insert menu) pointing to the root item of the content tree you want to analyze:
    ![Tree Settings item](/images/Tree-Settings.png)
     1. **Root**: Point to the root item of the content tree to be profiled; 									
-	   - If more than one **Tree Settings** has **Root** pointing to items under the same path, the setting whose path is closer to the item being analyzed will be used. For instance:
-	      - TreeSettings1: */sitecore/content/Home*
-		  - TreeSettings2: */sitecore/content/Home/Products*
-		     - If the item analyzed is */sitecore/content/Home/Products/CDP*, then TreeSettings2 is used
-			 - If the item analyzed is */sitecore/content/Home/ContactUs*, then TreeSettings1 is used
-	1. **Process Profiles**: Select the Profile Cards to be used in the analysis;
+	1. **Process Profiles**: Select the Profile Cards to be used in the profile. Profile Cards are stored under **/sitecore/system/Marketing Control Panel/Profiles** and can be defined by your marketing team to represent your most common audiences. For further information about creating Profiles [check this documentation page](https://doc.sitecore.com/xp/en/users/104/sitecore-experience-platform/content-profiling.html);
+
 
 ## Usage
+
+After the module is installed and configured, you will see these two buttons in the Content Editor Ribbon, under **Analyze**:
+
+![AI Profiler Chunk in Content Editor](/images/AI-Profiler-Content-Editor.png)
+
+### CASE 1 - Profiling an individual Page
+
+You can profile an individual page by selecting an item at the tree in Content Editor and clicking the **Profile Page** button under the **Analyze** ribbon (see screenshot above). 
+
+> [!NOTE]
+> The **Profile Page** button will only be enabled if the selected item has some Layout (also known as a *Page Item*). Items without Layout configured will be ignored.
+
+The module will analyze the page content and assign Profile Cards accordingly. When the process finishes, you can then see the assigned Profile Cards in Content Editor at the top right corner:
+
+![Assigned Profile Card to the profiled item](/images/Profile-Cards-Assigned.png)
+
+> [!TIP]
+> If you don't see the Profile Cards assigned, verify the following:
+> - The **Tree Settings** item is correctly configured:
+>	- The **Root** field has a path that encompasses the profiled item;
+>	- The **Process Profiles** field points to at least one valid Profile, that is correctly deployed and has meaningful information the AI can use to profile your content;
+> - The profiled item has some valid content  
+
+### CASE 2 - Profiling an entire Content Tree
+
+> [!NOTE]
+> When profiling a full Tree, items if they have some Layout (also known as *Page Items*). Items without Layout configured will be ignored.
+
+### CASE 3 - Automatic profiling triggered via Workflow 
+
+
+### How the Tree Settings item is selected
+
+If more than one **Tree Settings** item has the **Root** field pointing to items under the same path, the one with path closer to the item being profiled will be used.
+
+For instance, consider the following **Tree Settings** items:
+
+- **TreeSettings1**: 
+  - **Root**: */sitecore/content/Home*
+- **TreeSettings2**: 
+  - **Root**: */sitecore/content/Home/Products*
+
+The chosen **Tree Settings** item is determided by the path of the item being profiled:
+1. If the path is */sitecore/content/Home/Products/CDP*, **TreeSettings2** is used (because this path is closer to */sitecore/content/Home/Products* than */sitecore/content/Home*)
+1. If the path is */sitecore/content/Home/ContactUs*, **TreeSettings1** is used (because */sitecore/content/Home* is the only one matching this path)
+
+
+
