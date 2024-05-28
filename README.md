@@ -88,8 +88,8 @@ After the module is installed and configured, you will see the following buttons
 ![AI Profiler Chunk in Content Editor](/images/AI-Profiler-Content-Editor.png)
 
 > [!NOTE]
-> - The **Profile Page** button is disabled if the selected has no Layout (is not a *Page Item*);
-> - The **Profile Tree** button is disabled if the selected has no Layout, or no children items underneat it.
+> - The **Profile Page** is disabled if the selected has no Layout (is not a *Page Item*);
+> - The **Profile Tree** is disabled if the selected has no Layout, or no children items underneat it.
 
 
 ### CASE 1 - Profiling an individual Page
@@ -102,10 +102,11 @@ The module will analyze the page content and assign Profile Cards accordingly. W
 
 > [!TIP]
 > If you don't see the Profile Cards assigned, verify the following:
-> - The **Tree Settings** item is correctly configured:
->	- The **Root** field has a path that encompasses the profiled item;
->	- The **Process Profiles** field points to at least one valid Profile, that is correctly deployed and has meaningful information the AI can use to profile your content;
-> - The profiled item has some valid content  
+> 1. That the **Tree Settings** item is correctly configured, including:
+>     1. The **Root** field has a path that encompasses the profiled item;
+>     1. The **Process Profiles** field points to at least one valid Profile, that is correctly deployed and has meaningful information the AI can use to profile your content.
+> 1. The profiled item has some valid content, and the content matches the Profile Cards you are expecting to see assigned.
+> 1. Check the Sitecore CM logs for any errors or warnings that might have occurred during the profiling process.
 
 ### CASE 2 - Profiling an entire Content Tree
 
