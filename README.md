@@ -133,7 +133,7 @@ When the process finishes, you can then see the assigned Profile Cards in Conten
 
 ### CASE 3 - Automatic profiling triggered in a Workflow 
 
-To help automate the profiling process, you can trigger the profiling of an items via a Sitecore Workflow. 
+To keep the page profiling always updated as your content changes, you can automate the profiling process with Workflows. 
 
 The module comes with a sample workflow called **Sample AI Profiler Workflow**. When using this workflow, the content profiling is triggered at the **Run AI Profiler** action, after the command **"Approve and Publish"** is executed (normally by the content reviewer).
 
