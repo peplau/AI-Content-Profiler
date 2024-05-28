@@ -59,9 +59,6 @@ By streamlining this process, the module allows marketers to adopt Behavioural T
 
 The module is distributed in two flavors: 
 
-- **Option 1 - Using a Sitecore Package (.zip)**, better for quick manual installations;
-- **Option 2 - Sitecore CLI Content Serialization (.itempackage)**, more appropriated for automated deployments and continuous integration pipelines.
-
 <hr/>
 
 ### Option 1 - Using the Sitecore Package (.zip)
@@ -127,13 +124,7 @@ When the process finishes, you can then see the assigned Profile Cards in Conten
 ![Assigned Profile Card to the profiled item](/images/Profile-Cards-Assigned.png)
 
 > [!TIP]
-> If after profiling a page you still don't see the Profile Cards assigned to it, follow the steps below:
-> 1. Check if the **Tree Settings** item is correctly configured, including:
->     1. The **Root** field has a path that encompasses the profiled item;
->     1. The **Process Profiles** field points to at least one valid Profile, the Profiles are correctly deployed and have meaningful information that can be used to profile your content.
-> 1. Verify if the profiled item has any valid content, and the content matches the Profile Cards you are expecting to see assigned.
-> 1. Check the Sitecore CM logs for any errors or warnings that might have occurred during the profiling process.
-
+> If after profiling a page you still don't see the Profile Cards assigned to it, follow the steps on [Q2](#q2---after-profiling-a-page-or-an-entire-tree-i-still-dont-see-any-profile-cards-assigned-what-should-i-do)
 <hr/>
 
 ### USE CASE 2 - Profiling an entire Content Tree
