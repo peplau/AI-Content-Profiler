@@ -91,7 +91,6 @@ After the module is installed and configured, you will see the following buttons
 > - **Profile Page** is disabled if the selected item has no Layout (is not a *Page Item*);
 > - **Profile Tree** is disabled if the selected item has no Layout and no children items underneat it.
 
-
 ### CASE 1 - Profiling an individual Page
 
 You can profile an individual page by selecting an item at the tree in Content Editor and clicking the **Profile Page** button under the **Analyze** ribbon (see screenshot above). The page content will be analyzed and Profile Cards assigned accordingly. 
@@ -104,7 +103,7 @@ When the process finishes, you can then see the assigned Profile Cards in Conten
 > If after profiling a page you still don't see the Profile Cards assigned, verify the following:
 > 1. That the **Tree Settings** item is correctly configured, including:
 >     1. The **Root** field has a path that encompasses the profiled item;
->     1. The **Process Profiles** field points to at least one valid Profile, the Profiles are correctly deployed and have meaningful information that can be use to profile your content.
+>     1. The **Process Profiles** field points to at least one valid Profile, the Profiles are correctly deployed and have meaningful information that can be used to profile your content.
 > 1. The profiled item has some valid content, and the content matches the Profile Cards you are expecting to see assigned.
 > 1. Check the Sitecore CM logs for any errors or warnings that might have occurred during the profiling process.
 
@@ -112,31 +111,41 @@ When the process finishes, you can then see the assigned Profile Cards in Conten
 
 To profile an entire content tree, select the root item to be analyzed in Content Editor and click the **Profile Tree** button under the **Analyze** ribbon. The content tree will be entirely analyzed, and Profile Cards  assigned accordingly. 
 
-When the process finishes, you can then see the assigned Profile Cards in Content Editor, as also described in [CASE 1](#case-1---profiling-an-individual-page).
+When the process finishes, you can then see the assigned Profile Cards in Content Editor, as seen in [CASE 1](#case-1---profiling-an-individual-page).
 
 > [!NOTE]
-> When profiling a full Tree, items if they have some Layout (also known as *Page Items*). Items without Layout configured will be ignored.
+> When profiling a full Tree, items will only be processed if they have some Layout (also known as *Page Items*). Items without Layout configured will be skipped.
 
 > [!TIP]
-> If after profiling a page you still don't see the Profile Cards assigned, please go throught the same steps as in the [CASE 1](#case-1---profiling-an-individual-page).
+> If after profiling a page you still don't see the Profile Cards assigned to your pages, please go throught the same debugging steps as described in [CASE 1](#case-1---profiling-an-individual-page).
 
 ### CASE 3 - Automatic profiling triggered via Workflow 
 
 
-### How the Tree Settings item is selected
+## Frequently Asked Questions (FAQ)
 
-If more than one **Tree Settings** item has the **Root** field pointing to items under the same path, the one with path closer to the item being profiled will be used.
+### Q1 - When profiling a page, how is the Tree Settings item selected?
 
-For instance, consider the following **Tree Settings** items:
+The **Tree Settings** item is selected based on the path of the item being profiled. If more than one have the **Root** field pointing to items under the same path, the one with closer path to the profiled item will be used.
+
+For instance, if we have the following **Tree Settings** items:
 
 - **TreeSettings1**: 
   - **Root**: */sitecore/content/Home*
 - **TreeSettings2**: 
   - **Root**: */sitecore/content/Home/Products*
 
-The chosen **Tree Settings** item is determided by the path of the item being profiled:
-1. If the path is */sitecore/content/Home/Products/CDP*, **TreeSettings2** is used (because this path is closer to */sitecore/content/Home/Products* than */sitecore/content/Home*)
-1. If the path is */sitecore/content/Home/ContactUs*, **TreeSettings1** is used (because */sitecore/content/Home* is the only one matching this path)
+The chosen one is determided by the path that is closer to the profiled item:
+1. If the profiled path is */sitecore/content/Home/Products/CDP*, **TreeSettings2** is used because this path is closer to */sitecore/content/Home/Products* than */sitecore/content/Home*;
+1. If the profiled path is */sitecore/content/Home/ContactUs*, **TreeSettings1** is used because */sitecore/content/Home* is the only one matching this path.
 
+### Q2 - After profiling a page (or an entire tree) I still don't see any Profile Cards assigned, what should I do?
 
+If after profiling a page you still don't see the Profile Cards assigned to them, verify the following:
+1. That the **Tree Settings** item is correctly configured, including:
+    1. The **Root** field has a path that encompasses the profiled item;
+    1. The **Process Profiles** field points to at least one valid Profile, the Profiles are correctly deployed and have meaningful information that can be used to profile your content.
+1. The profiled item has some valid content, and the content matches the Profile Cards you are expecting to see assigned.
+1. Check the Sitecore CM logs for any errors or warnings that might have occurred during the profiling process.
 
+### Q3 - What does a Profile need to be relevant and correctly used for profiling?
