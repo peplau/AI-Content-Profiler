@@ -156,25 +156,23 @@ The module comes with a sample Profile called **Sitecore Public**, representing 
 
 ![Demo Profile called 'Sitecore Public'](/images/Demo-Profile--Sitecore-Public.png)
 
-When the content profiling starts, Profiles are serialized and sent to the GenAI as part of the content to be analyzed. 
-
-The following Profile fields are serialized: (in the same order as in the above screenshot)
+When the content profiling starts, your Profiles are serialized and sent to the GenAI as part of the content to be analyzed. The following Profile fields are serialized (in the same order as in the above screenshot):
 
 1. **Profile** (Template: */sitecore/templates/System/Analytics/Profile*)   
-       1. Name
-       1. Description
+   1. Name
+   1. Description
 1. **Profile Keys** (Template: */sitecore/templates/System/Analytics/Profile Key*)
-       1. Name
-       1. MinValue
-       1. MaxValue
+   1. Name
+   1. MinValue
+   1. MaxValue
 1. **Profile Cards** (Template: */sitecore/templates/System/Analytics/Profile Card*)
-       1. Name
-       1. Details
-       1. Description
-       1. Profile Card Value
+   1. Name
+   1. Details
+   1. Description
+   1. Profile Card Value
 
 > [!TIP]
-> To ensure the best results when building your Profiles, make sure to include meaningful content on each of these fields :
+> To ensure the best results when building your Profiles, make sure to include meaningful content on each of these field.
    
 
 
