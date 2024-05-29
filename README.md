@@ -131,7 +131,8 @@ When the process finishes, you can then see the assigned Profile Cards in Conten
 
 To profile an entire content tree, select the root item to be analyzed in Content Editor and click the **Profile Tree** button under the **Analyze** ribbon. The content tree will be entirely analyzed, and Profile Cards  assigned accordingly. 
 
-When the process finishes, you can then see the assigned Profile Cards in Content Editor, as seen in [USE CASE 1](#case-1---profiling-an-individual-page).
+When the process finishes, you can then see the assigned Profile Cards in Content Editor, as seen in [USE CASE 1](#use-case-1---profiling-an-individual-page)
+
 
 > [!NOTE]
 > When profiling a full Tree, items will only be processed if they have some Layout (also known as *Page Items*). Items without Layout configured will be skipped.
