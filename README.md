@@ -137,7 +137,7 @@ When the process finishes, you can then see the assigned Profile Cards in Conten
 > When profiling a full Tree, items will only be processed if they have some Layout (also known as *Page Items*). Items without Layout configured will be skipped.
 
 > [!TIP]
-> If after profiling a page you still don't see the Profile Cards assigned to your pages, please go throught the same debugging steps as described in [USE CASE 1](#case-1---profiling-an-individual-page).
+> If after profiling a page you still don't see the Profile Cards assigned to your pages, please go throught the same debugging steps as described in [Q2](#q2---after-profiling-a-page-or-an-entire-tree-i-still-dont-see-any-profile-cards-assigned-what-should-i-do)
 
 <hr/>
 
