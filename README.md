@@ -29,7 +29,7 @@ Marketers constantly strive to deliver targeted, personalized content to their a
 
 ![Profile Cards showing for a contact in Experience Profile](/images/best-pattern-matches.png)
 
-Adopting and mantaining Profile Cards can be a daunting and time-consuming task for Content Editors. Analyzing content and picking the right Profile Cards can be challenging, and the frequent updates and changes require continual adjustments, leading to a significant burden on the content management team.
+Adopting and maintaining Profile Cards can be a daunting and time-consuming task for Content Editors. Analyzing content and picking the right Profile Cards can be challenging, and the frequent updates and changes require continual adjustments, leading to a significant burden on the content management team.
 
 ![Select Profile Cards dialogue in Sitecore XP](/images/2-tagging-content-multiple-profile-cards---tannis---two.webp)
 
@@ -111,7 +111,7 @@ After the module is installed and configured, you will see the following buttons
 
 > [!NOTE]
 > - **Profile Page** is disabled if the selected item has no Layout (is not a *Page Item*);
-> - **Profile Tree** is disabled if the selected item has no Layout and no children items underneat it.
+> - **Profile Tree** is disabled if the selected item has no Layout and no children items underneath it.
 
 <hr/>
 
@@ -129,7 +129,7 @@ When the process finishes, you can then see the assigned Profile Cards in Conten
 
 ### USE CASE 2 - Profiling an entire Content Tree
 
-To profile an entire content tree, select the root item to be analyzed in Content Editor and click the **Profile Tree** button under the **Analyze** ribbon. The content tree will be entirely analyzed, and Profile Cards  assigned accordingly. 
+To profile an entire content tree, select the root item to be analyzed in Content Editor and click the **Profile Tree** button under the **Analyze** ribbon. The content tree will be entirely analyzed, and Profile Cards assigned accordingly. 
 
 When the process finishes, you can then see the assigned Profile Cards in Content Editor, as seen in [USE CASE 1](#use-case-1---profiling-an-individual-page)
 
@@ -138,7 +138,7 @@ When the process finishes, you can then see the assigned Profile Cards in Conten
 > When profiling a full Tree, items will only be processed if they have some Layout (also known as *Page Items*). Items without Layout configured will be skipped.
 
 > [!TIP]
-> If after profiling a page you still don't see the Profile Cards assigned to your pages, please go throught the same debugging steps as described in [Q2](#q2---after-profiling-a-page-or-an-entire-tree-i-still-dont-see-any-profile-cards-assigned-what-should-i-do)
+> If after profiling a page you still don't see the Profile Cards assigned to your pages, please go through the same debugging steps as described in [Q2](#q2---after-profiling-a-page-or-an-entire-tree-i-still-dont-see-any-profile-cards-assigned-what-should-i-do)
 
 <hr/>
 
@@ -160,7 +160,7 @@ The module comes with a sample workflow called **Sample AI Profiler Workflow**. 
 
 ### Q1 - When profiling a page, how is the Tree Settings item selected?
 
-The **Tree Settings** item is selected based on the path of the item being profiled. If more than one have the **Root** field pointing to items under the same path, the one with closer path to the profiled item will be used.
+The **Tree Settings** item is selected based on the path of the item being profiled. If more than one has the **Root** field pointing to items under the same path, the one with a closer path to the profiled item will be used.
 
 For instance, if we have the following **Tree Settings** items:
 
@@ -169,7 +169,7 @@ For instance, if we have the following **Tree Settings** items:
 - **TreeSettings2**: 
   - **Root**: */sitecore/content/Home/Products*
 
-The chosen one is determided by the path that is closer to the profiled item:
+The chosen one is determined by the path that is closer to the profiled item:
 1. If the profiled path is */sitecore/content/Home/Products/CDP*, **TreeSettings2** is used because this path is closer to */sitecore/content/Home/Products* than */sitecore/content/Home*;
 1. If the profiled path is */sitecore/content/Home/ContactUs*, **TreeSettings1** is used because */sitecore/content/Home* is the only one matching this path.
 
@@ -190,7 +190,7 @@ If after profiling a page you still don't see the Profile Cards assigned to them
 
 A Profile is a collection of attributes that represent a specific audience segment. To be effective, a Profile should contain attributes that are relevant to the audience segment it represents. 
 
-The module comes with a sample Profile called **Sitecore Public**, representing some possible profiles of visitors interested about Sitecore content. 
+The module comes with a sample Profile called **Sitecore Public**, representing some possible profiles of visitors interested in Sitecore content. 
 
 ![Demo Profile called 'Sitecore Public'](/images/Demo-Profile--Sitecore-Public.png)
 
@@ -210,7 +210,7 @@ When the content profiling starts, your Profiles are serialized and sent to the 
    1. Profile Card Value
 
 > [!TIP]
-> To ensure the best results when building your Profiles, make sure to include meaningful content on each of these field.
+> To ensure the best results when building your Profiles, make sure to include meaningful content in each of these fields.
 
 <hr/>   
 
@@ -218,9 +218,10 @@ When the content profiling starts, your Profiles are serialized and sent to the 
 
 The content of your pages is analyzed by the GenAI to determine the Profile Cards to be assigned. When the content profiling starts, all fields matching the following conditions are serialized:
 
-- Text-typed fields (Single-Line, Multi-Line, Rich Text) that are not Sitecore internal (names not starting with "__")
+- Text-typed fields (Single-Line, Multi-Line, Rich Text)
+- that are not Sitecore internal (names not starting with "__")
 
 > [!TIP]
 > To ensure the best profiling results, make sure to include meaningful content at least on the main fields of your pages (Eg: Title, Summary, Body, etc).
 >
-> Also make sure the content of your pages relates with the Profiles used for content profiling. For instance, content about **Sports** have a lower chance to be identified with the demo Profile **"Sitecore Public"** then content about **Technology** or **Marketing**.
+> Also make sure the content of your pages relates to the Profiles used for content profiling. For instance, content about **Sports** has a lower chance of being identified with the demo Profile **"Sitecore Public"** than content about **Technology** or **Marketing**.
